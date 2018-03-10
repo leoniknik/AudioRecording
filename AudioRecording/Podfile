@@ -6,5 +6,6 @@ target 'AudioRecording' do
   use_frameworks!
 
   pod 'BubbleTransition'
+  pod 'SCSiriWaveformView' 
 
 end

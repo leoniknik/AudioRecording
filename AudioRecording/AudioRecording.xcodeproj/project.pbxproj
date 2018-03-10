@@ -21,6 +21,7 @@
 		CAD718A420530E2B007D5239 /* FilesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD718A320530E2B007D5239 /* FilesAssembly.swift */; };
 		CAD718A920534B2F007D5239 /* AudioRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD718A720534B2F007D5239 /* AudioRecordCell.swift */; };
 		CAD718AA20534B2F007D5239 /* AudioRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD718A820534B2F007D5239 /* AudioRecordCell.xib */; };
+		CADA9C89205434430031433B /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADA9C88205434430031433B /* UIColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		CAD718A320530E2B007D5239 /* FilesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesAssembly.swift; sourceTree = "<group>"; };
 		CAD718A720534B2F007D5239 /* AudioRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordCell.swift; sourceTree = "<group>"; };
 		CAD718A820534B2F007D5239 /* AudioRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioRecordCell.xib; sourceTree = "<group>"; };
+		CADA9C88205434430031433B /* UIColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColors.swift; sourceTree = "<group>"; };
 		E99A8B62BB5631D2EA99EDBA /* Pods-AudioRecording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioRecording.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioRecording/Pods-AudioRecording.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 			children = (
 				CAD7187D2052FBBC007D5239 /* Assets.xcassets */,
 				CAD7187F2052FBBC007D5239 /* LaunchScreen.storyboard */,
+				CADA9C88205434430031433B /* UIColors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -362,10 +365,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AudioRecording/Pods-AudioRecording-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -387,6 +392,7 @@
 				CAD7189B20530AAE007D5239 /* RootAssembly.swift in Sources */,
 				CAD718772052FBBB007D5239 /* AppDelegate.swift in Sources */,
 				CAD7189E20530B92007D5239 /* FilesPresentationModel.swift in Sources */,
+				CADA9C89205434430031433B /* UIColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

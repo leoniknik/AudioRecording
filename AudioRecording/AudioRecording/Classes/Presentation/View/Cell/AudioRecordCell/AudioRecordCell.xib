@@ -25,13 +25,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="58.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT6-zO-5UK">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT6-zO-5UK">
                         <rect key="frame" x="16" y="9.5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="p9t-sW-zow"/>
                             <constraint firstAttribute="width" constant="40" id="qNV-ct-6F2"/>
                         </constraints>
-                        <state key="normal" backgroundImage="play"/>
+                        <state key="normal" image="play"/>
+                        <connections>
+                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ty6-z5-gZb"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Запись 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zY-s9-Qch">
                         <rect key="frame" x="64" y="14" width="197" height="30"/>
@@ -62,6 +65,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellButton" destination="aT6-zO-5UK" id="bdd-gD-ga5"/>
+            </connections>
             <point key="canvasLocation" x="34" y="46.5"/>
         </tableViewCell>
     </objects>

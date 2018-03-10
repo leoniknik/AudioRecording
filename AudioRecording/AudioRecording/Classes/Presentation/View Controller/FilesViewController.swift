@@ -20,6 +20,8 @@ final class FilesViewController: UIViewController {
     private let cellIdentifier = "\(AudioRecordCell.self)"
     private let cellHeight: CGFloat = 60
     
+    private var playingRow: Int = -1
+    
     init(rootAssembly: RootAssembly, model: FilesPresentationModel) {
         self.model = model
         self.rootAssembly = rootAssembly
@@ -82,7 +84,18 @@ extension FilesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AudioRecordCell else { return UITableViewCell() }
+        
+        cell.row = indexPath.item
+        cell.delegate = self
+        
+        if indexPath.item == playingRow {
+            cell.play()
+        } else {
+            cell.stop()
+        }
+        
         return cell
     }
     
@@ -114,6 +127,14 @@ extension FilesViewController: UIViewControllerTransitioningDelegate {
     
     func navBarHeight() -> CGFloat {
         return navigationController!.navigationBar.frame.height
+    }
+}
+
+extension FilesViewController: AudioRecordCellDelegate {
+    
+    func buttonPressed(row: Int) {
+        playingRow = row
+        tableView.reloadData()
     }
     
 }

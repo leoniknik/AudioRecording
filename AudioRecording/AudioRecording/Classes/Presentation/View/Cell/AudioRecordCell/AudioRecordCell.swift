@@ -8,8 +8,17 @@
 
 import UIKit
 
-class AudioRecordCell: UITableViewCell {
+protocol AudioRecordCellDelegate: class {
+    func buttonPressed(row: Int)
+}
 
+final class AudioRecordCell: UITableViewCell {
+
+    var row: Int = 0
+    weak var delegate: AudioRecordCellDelegate?
+    
+    @IBOutlet weak var cellButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -18,4 +27,15 @@ class AudioRecordCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        delegate?.buttonPressed(row: row)
+    }
+    
+    func play() {
+        cellButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+    }
+    
+    func stop() {
+        cellButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+    }
 }

@@ -34,9 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = UINavigationController()
         navController.navigationBar.isTranslucent = false
         navController.navigationBar.barStyle = .blackOpaque
-        navController.navigationBar.barTintColor = UIColor(red: 229/255.0, green: 34/255.0, blue: 42/255.0, alpha: 1.0)
+        navController.navigationBar.barTintColor = .ccRed
         return navController
     }
     
 }
+
+
 
