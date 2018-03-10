@@ -7,21 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA876BEA2053F79C003E81DC /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA876BE82053F79C003E81DC /* RecordingViewController.swift */; };
+		CA876BEB2053F79C003E81DC /* RecordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA876BE92053F79C003E81DC /* RecordingViewController.xib */; };
 		CAD718772052FBBB007D5239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD718762052FBBB007D5239 /* AppDelegate.swift */; };
-		CAD718792052FBBC007D5239 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD718782052FBBC007D5239 /* ViewController.swift */; };
-		CAD7187C2052FBBC007D5239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD7187A2052FBBC007D5239 /* Main.storyboard */; };
 		CAD7187E2052FBBC007D5239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD7187D2052FBBC007D5239 /* Assets.xcassets */; };
 		CAD718812052FBBC007D5239 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD7187F2052FBBC007D5239 /* LaunchScreen.storyboard */; };
+		CAD7189220530A32007D5239 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7189020530A32007D5239 /* FilesViewController.swift */; };
+		CAD7189320530A32007D5239 /* FilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD7189120530A32007D5239 /* FilesViewController.xib */; };
+		CAD7189B20530AAE007D5239 /* RootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7189A20530AAE007D5239 /* RootAssembly.swift */; };
+		CAD7189E20530B92007D5239 /* FilesPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7189D20530B92007D5239 /* FilesPresentationModel.swift */; };
+		CAD718A020530BEC007D5239 /* PresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD7189F20530BEC007D5239 /* PresentationModel.swift */; };
+		CAD718A420530E2B007D5239 /* FilesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD718A320530E2B007D5239 /* FilesAssembly.swift */; };
+		CAD718A920534B2F007D5239 /* AudioRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD718A720534B2F007D5239 /* AudioRecordCell.swift */; };
+		CAD718AA20534B2F007D5239 /* AudioRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD718A820534B2F007D5239 /* AudioRecordCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA876BE82053F79C003E81DC /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		CA876BE92053F79C003E81DC /* RecordingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordingViewController.xib; sourceTree = "<group>"; };
 		CAD718732052FBBB007D5239 /* AudioRecording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecording.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD718762052FBBB007D5239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAD718782052FBBC007D5239 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CAD7187B2052FBBC007D5239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAD7187D2052FBBC007D5239 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAD718802052FBBC007D5239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAD718822052FBBC007D5239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAD7189020530A32007D5239 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
+		CAD7189120530A32007D5239 /* FilesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilesViewController.xib; sourceTree = "<group>"; };
+		CAD7189A20530AAE007D5239 /* RootAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAssembly.swift; sourceTree = "<group>"; };
+		CAD7189D20530B92007D5239 /* FilesPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesPresentationModel.swift; sourceTree = "<group>"; };
+		CAD7189F20530BEC007D5239 /* PresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationModel.swift; sourceTree = "<group>"; };
+		CAD718A320530E2B007D5239 /* FilesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesAssembly.swift; sourceTree = "<group>"; };
+		CAD718A720534B2F007D5239 /* AudioRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordCell.swift; sourceTree = "<group>"; };
+		CAD718A820534B2F007D5239 /* AudioRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioRecordCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +70,158 @@
 		CAD718752052FBBB007D5239 /* AudioRecording */ = {
 			isa = PBXGroup;
 			children = (
+				CAD718882052FD59007D5239 /* Classes */,
+				CAD718892052FD64007D5239 /* Resources */,
+				CAD7188A2052FD7D007D5239 /* Supporting files */,
 				CAD718762052FBBB007D5239 /* AppDelegate.swift */,
-				CAD718782052FBBC007D5239 /* ViewController.swift */,
-				CAD7187A2052FBBC007D5239 /* Main.storyboard */,
-				CAD7187D2052FBBC007D5239 /* Assets.xcassets */,
-				CAD7187F2052FBBC007D5239 /* LaunchScreen.storyboard */,
-				CAD718822052FBBC007D5239 /* Info.plist */,
 			);
 			path = AudioRecording;
+			sourceTree = "<group>";
+		};
+		CAD718882052FD59007D5239 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7188B2052FDA6007D5239 /* Presentation */,
+				CAD7188C2052FDDD007D5239 /* Buisness Logic */,
+				CAD7188D2052FDF1007D5239 /* Model */,
+				CAD7188F2052FE00007D5239 /* Persistent */,
+				CAD7188E2052FDFA007D5239 /* Common */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CAD718892052FD64007D5239 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7187D2052FBBC007D5239 /* Assets.xcassets */,
+				CAD7187F2052FBBC007D5239 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CAD7188A2052FD7D007D5239 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				CAD718822052FBBC007D5239 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		CAD7188B2052FDA6007D5239 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7189920530A8E007D5239 /* Helper */,
+				CAD7189820530A7D007D5239 /* Assembly */,
+				CAD7189720530A71007D5239 /* View */,
+				CAD7189620530A5B007D5239 /* View Model */,
+				CAD7189520530A55007D5239 /* Presentation Model */,
+				CAD7189420530A3E007D5239 /* View Controller */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CAD7188C2052FDDD007D5239 /* Buisness Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Buisness Logic";
+			sourceTree = "<group>";
+		};
+		CAD7188D2052FDF1007D5239 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CAD7188E2052FDFA007D5239 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7189A20530AAE007D5239 /* RootAssembly.swift */,
+				CAD7189F20530BEC007D5239 /* PresentationModel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CAD7188F2052FE00007D5239 /* Persistent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistent;
+			sourceTree = "<group>";
+		};
+		CAD7189420530A3E007D5239 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7189020530A32007D5239 /* FilesViewController.swift */,
+				CA876BE82053F79C003E81DC /* RecordingViewController.swift */,
+				CA876BE92053F79C003E81DC /* RecordingViewController.xib */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		CAD7189520530A55007D5239 /* Presentation Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7189D20530B92007D5239 /* FilesPresentationModel.swift */,
+			);
+			path = "Presentation Model";
+			sourceTree = "<group>";
+		};
+		CAD7189620530A5B007D5239 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		CAD7189720530A71007D5239 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAD718A520534A8C007D5239 /* Cell */,
+				CAD7189C20530AB5007D5239 /* Xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAD7189820530A7D007D5239 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				CAD718A320530E2B007D5239 /* FilesAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		CAD7189920530A8E007D5239 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		CAD7189C20530AB5007D5239 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				CAD7189120530A32007D5239 /* FilesViewController.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		CAD718A520534A8C007D5239 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CAD718A620534AA7007D5239 /* AudioRecordCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CAD718A620534AA7007D5239 /* AudioRecordCell */ = {
+			isa = PBXGroup;
+			children = (
+				CAD718A720534B2F007D5239 /* AudioRecordCell.swift */,
+				CAD718A820534B2F007D5239 /* AudioRecordCell.xib */,
+			);
+			path = AudioRecordCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD718812052FBBC007D5239 /* LaunchScreen.storyboard in Resources */,
+				CAD718AA20534B2F007D5239 /* AudioRecordCell.xib in Resources */,
+				CA876BEB2053F79C003E81DC /* RecordingViewController.xib in Resources */,
 				CAD7187E2052FBBC007D5239 /* Assets.xcassets in Resources */,
-				CAD7187C2052FBBC007D5239 /* Main.storyboard in Resources */,
+				CAD7189320530A32007D5239 /* FilesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +298,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAD718792052FBBC007D5239 /* ViewController.swift in Sources */,
+				CAD718A020530BEC007D5239 /* PresentationModel.swift in Sources */,
+				CAD718A420530E2B007D5239 /* FilesAssembly.swift in Sources */,
+				CAD7189220530A32007D5239 /* FilesViewController.swift in Sources */,
+				CAD718A920534B2F007D5239 /* AudioRecordCell.swift in Sources */,
+				CA876BEA2053F79C003E81DC /* RecordingViewController.swift in Sources */,
+				CAD7189B20530AAE007D5239 /* RootAssembly.swift in Sources */,
 				CAD718772052FBBB007D5239 /* AppDelegate.swift in Sources */,
+				CAD7189E20530B92007D5239 /* FilesPresentationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CAD7187A2052FBBC007D5239 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CAD7187B2052FBBC007D5239 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CAD7187F2052FBBC007D5239 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,7 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BZ5C8942NC;
-				INFOPLIST_FILE = AudioRecording/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AudioRecording/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Volodin.AudioRecording;
@@ -292,7 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BZ5C8942NC;
-				INFOPLIST_FILE = AudioRecording/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AudioRecording/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Volodin.AudioRecording;
