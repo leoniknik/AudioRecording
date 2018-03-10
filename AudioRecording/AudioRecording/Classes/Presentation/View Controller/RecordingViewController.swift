@@ -8,10 +8,22 @@
 
 import UIKit
 
-class RecordingViewController: UIViewController {
+final class RecordingViewController: UIViewController {
 
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    @IBAction func dismissViewController(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }

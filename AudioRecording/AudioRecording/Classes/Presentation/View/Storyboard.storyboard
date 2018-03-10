@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oOF-po-bAQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recording View Controller-->
+        <scene sceneID="KSB-lt-63h">
+            <objects>
+                <viewController id="oOF-po-bAQ" customClass="RecordingViewController" customModule="AudioRecording" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mu9-sH-2jG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ze3-xQ-mIv">
+                                <rect key="frame" x="164" y="281" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dismissViewController:" destination="oOF-po-bAQ" eventType="touchUpInside" id="hEU-uS-ruz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmJ-9c-TwQ">
+                                <rect key="frame" x="162" y="567" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="K8G-ym-zKE"/>
+                                    <constraint firstAttribute="height" constant="50" id="gy3-Ot-xW7"/>
+                                </constraints>
+                                <state key="normal" image="check"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj4-lf-8Ny">
+                                <rect key="frame" x="237" y="567" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="8PZ-G1-S7J"/>
+                                    <constraint firstAttribute="height" constant="50" id="HOo-IV-JXk"/>
+                                </constraints>
+                                <state key="normal" image="delete"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UyK-BK-Teq">
+                                <rect key="frame" x="87" y="567" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3mB-O0-Xpf"/>
+                                    <constraint firstAttribute="width" constant="50" id="E9M-fZ-e8i"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UmJ-9c-TwQ" firstAttribute="centerX" secondItem="mu9-sH-2jG" secondAttribute="centerX" id="2Xc-d3-avD"/>
+                            <constraint firstItem="QRT-Wx-Dcg" firstAttribute="bottom" secondItem="yj4-lf-8Ny" secondAttribute="bottom" constant="50" id="5nx-vF-P6o"/>
+                            <constraint firstItem="QRT-Wx-Dcg" firstAttribute="bottom" secondItem="UmJ-9c-TwQ" secondAttribute="bottom" constant="50" id="QWJ-O8-DcV"/>
+                            <constraint firstItem="yj4-lf-8Ny" firstAttribute="leading" secondItem="UmJ-9c-TwQ" secondAttribute="trailing" constant="25" id="SoA-6b-bUx"/>
+                            <constraint firstItem="QRT-Wx-Dcg" firstAttribute="bottom" secondItem="UyK-BK-Teq" secondAttribute="bottom" constant="50" id="gAE-2I-Z90"/>
+                            <constraint firstItem="UmJ-9c-TwQ" firstAttribute="leading" secondItem="UyK-BK-Teq" secondAttribute="trailing" constant="25" id="pVn-46-iPR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QRT-Wx-Dcg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bN-Ie-vpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400" y="-74"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="check" width="55" height="56"/>
+        <image name="delete" width="64" height="64"/>
+        <image name="play" width="96" height="96"/>
+    </resources>
+</document>
