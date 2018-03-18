@@ -21,6 +21,7 @@ final class FilesViewController: UIViewController {
     private let cellHeight: CGFloat = 60
     
     private var playingRow: Int = -1
+    let transition = BubbleTransition()
     
     init(rootAssembly: RootAssembly, model: FilesPresentationModel) {
         self.model = model
@@ -37,11 +38,29 @@ final class FilesViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        model.obtainAudioRecords()
+    }
+    
     private func setupUI() {
         title = "Аудиозаписи"
         setupTableView()
         setupMicrophoneButton()
-        
+    }
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+    }
+    
+    private func setupMicrophoneButton() {
         bottomView.layer.masksToBounds = false
         bottomView.layer.shadowColor = UIColor.lightGray.cgColor
         bottomView.layer.shadowOffset = CGSize(width: 0, height: -2.5)
@@ -55,22 +74,8 @@ final class FilesViewController: UIViewController {
         microphoneButton.layer.shadowRadius = 4
     }
     
-    private func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.tableFooterView = UIView()
-        tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-    }
-    
-    private func setupMicrophoneButton() {
-        
-    }
-    
-    let transition = BubbleTransition()
-    
     @IBAction func record(_ sender: UIButton) {
-        let stb = UIStoryboard(name: "Storyboard", bundle: nil)
-        guard let viewcontroller = stb.instantiateInitialViewController() else { return }
+        guard let viewcontroller = rootAssembly.recordingAssembly.recordingViewController() else { return }
         viewcontroller.transitioningDelegate = self
         viewcontroller.modalPresentationStyle = .custom
         present(viewcontroller, animated: true, completion: nil)
@@ -79,16 +84,17 @@ final class FilesViewController: UIViewController {
 }
 
 extension FilesViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return model.audioRecords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AudioRecordCell else { return UITableViewCell() }
         
         cell.row = indexPath.item
         cell.delegate = self
+        cell.configure(viewModel: model.audioRecords[indexPath.item])
         
         if indexPath.item == playingRow {
             cell.play()
@@ -101,32 +107,6 @@ extension FilesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
-    }
-}
-
-extension FilesViewController: UIViewControllerTransitioningDelegate {
-    
-    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.transitionMode = .present
-        transition.startingPoint = CGPoint(x: bottomView.center.x, y: bottomView.center.y + statusBarHeight() + navBarHeight())
-        transition.bubbleColor = .lightGray
-        return transition
-    }
-    
-    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.transitionMode = .dismiss
-        transition.startingPoint = CGPoint(x: bottomView.center.x, y: bottomView.center.y + statusBarHeight() + navBarHeight())
-        transition.bubbleColor = .lightGray
-        return transition
-    }
-    
-    func statusBarHeight() -> CGFloat {
-        let statusBarSize = UIApplication.shared.statusBarFrame.size
-        return min(statusBarSize.width, statusBarSize.height)
-    }
-    
-    func navBarHeight() -> CGFloat {
-        return navigationController!.navigationBar.frame.height
     }
 }
 

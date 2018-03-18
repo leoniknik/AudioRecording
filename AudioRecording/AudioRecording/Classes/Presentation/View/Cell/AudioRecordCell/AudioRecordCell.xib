@@ -67,8 +67,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellButton" destination="aT6-zO-5UK" id="bdd-gD-ga5"/>
+                <outlet property="recordDuration" destination="gCy-NQ-s0A" id="5EO-9y-Zuf"/>
+                <outlet property="recordTitle" destination="4zY-s9-Qch" id="XFK-A1-P50"/>
             </connections>
-            <point key="canvasLocation" x="34" y="46.5"/>
+            <point key="canvasLocation" x="43" y="-67"/>
         </tableViewCell>
     </objects>
     <resources>

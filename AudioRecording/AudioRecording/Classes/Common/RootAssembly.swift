@@ -15,4 +15,9 @@ final class RootAssembly {
         return assembly
     }()
     
+    lazy var recordingAssembly: RecordingAssembly = {
+        let assembly = RecordingAssembly(rootAssembly: self)
+        return assembly
+    }()
+    
 }

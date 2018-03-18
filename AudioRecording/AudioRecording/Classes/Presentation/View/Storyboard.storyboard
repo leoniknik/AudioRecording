@@ -49,6 +49,9 @@
                                             <constraint firstAttribute="width" constant="50" id="E9M-fZ-e8i"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="play"/>
+                                        <connections>
+                                            <action selector="playPressed:" destination="oOF-po-bAQ" eventType="touchUpInside" id="tqm-TW-2W3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXX-GP-CSo">
                                         <rect key="frame" x="155" y="10" width="65" height="65"/>
@@ -113,7 +116,7 @@
                                     <constraint firstItem="RUI-uZ-eCI" firstAttribute="centerY" secondItem="IRq-0a-OEM" secondAttribute="centerY" id="j3X-jz-aA5"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0z-2M-HaJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0z-2M-HaJ">
                                 <rect key="frame" x="0.0" y="151" width="375" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="h5n-bS-eA7"/>
@@ -154,12 +157,12 @@
                         <outlet property="splashView" destination="HmS-qG-x3j" id="9je-Mh-GMw"/>
                         <outlet property="timerLabel" destination="P0z-2M-HaJ" id="BBX-l9-np1"/>
                         <outlet property="topView" destination="IRq-0a-OEM" id="ayM-4D-OuY"/>
-                        <outlet property="waveformView" destination="Ddm-Mn-nJd" id="vvI-lR-vFc"/>
+                        <outlet property="waveformView" destination="Ddm-Mn-nJd" id="k2X-GI-xnf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bN-Ie-vpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-400.80000000000001" y="-74.630541871921181"/>
+            <point key="canvasLocation" x="-534" y="-77"/>
         </scene>
     </scenes>
     <resources>

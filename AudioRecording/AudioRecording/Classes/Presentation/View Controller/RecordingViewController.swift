@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import SCSiriWaveformView
 
 final class RecordingViewController: UIViewController {
@@ -18,17 +17,20 @@ final class RecordingViewController: UIViewController {
     
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
-    
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet weak var timerLabel: UILabel!
     
-    var recorder: AVAudioRecorder!
+    var rootAssembly: RootAssembly!
+    var model: RecordingPresentationModel!
+    
     var seconds: Int = 0
     var timer = Timer()
-    
-    init() {
+
+    init(rootAssembly: RootAssembly, model: RecordingPresentationModel) {
+        self.model = model
+        self.rootAssembly = rootAssembly
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,38 +41,28 @@ final class RecordingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        model.setup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        runTimer()
+        model.play()
+    }
+    
+    private func setupUI() {
+        splashView.backgroundColor = .ccRed
+        topView.backgroundColor = .ccRed
+        
         waveformView.waveColor = UIColor.red
         waveformView.backgroundColor = .white
         waveformView.primaryWaveLineWidth = 3.0
         waveformView.secondaryWaveLineWidth = 1.0
         self.view.addSubview(waveformView)
-        
-        let url: URL = URL(fileURLWithPath: "/dev/null")
-        let settings: [String : Any] = [
-            AVSampleRateKey: 44100.0,
-            AVFormatIDKey: kAudioFormatAppleLossless,
-            AVNumberOfChannelsKey: 2,
-            AVEncoderAudioQualityKey: AVAudioQuality.min.rawValue
-        ]
-        
-        do {
-            recorder = try AVAudioRecorder(url: url, settings: settings)
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
-        } catch {
-            return
-        }
-        
-        recorder.prepareToRecord()
-        recorder.isMeteringEnabled = true
-        recorder.record()
-        
-        let displayLink:CADisplayLink = CADisplayLink(target: self, selector: #selector(updateMeters))
-        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        runTimer()
     }
     
     private func runTimer() {
@@ -89,24 +81,24 @@ final class RecordingViewController: UIViewController {
         timerLabel.text = timeString(time: TimeInterval(seconds))
     }
     
-    private func setupUI() {
-        splashView.backgroundColor = .ccRed
-        topView.backgroundColor = .ccRed
-    }
-    
-    @objc func updateMeters() {
-        recorder.updateMeters()
-        let normalizedValue: CGFloat = pow(10, CGFloat(recorder.averagePower(forChannel: 0))/20) + 0.05
+    func updateWaveView(normalizedValue: CGFloat) {
         waveformView.update(withLevel: normalizedValue)
     }
     
     @IBAction func dismissViewController(_ sender: UIButton) {
+        timer.invalidate()
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func pausePressed(_ sender: UIButton) {
+        model.stop()
         timer.invalidate()
         animateViews()
+    }
+    
+    
+    @IBAction func playPressed(_ sender: UIButton) {
+        model.playOrPause(sender)
     }
     
     func animateViews() {
@@ -131,5 +123,10 @@ final class RecordingViewController: UIViewController {
             self.deleteButton.alpha = 1.0
         }
     }
-    
+}
+
+extension RecordingViewController: RecordingPresentationModelDelegate {
+    func updateMeters(_ normalizeValue: CGFloat) {
+        waveformView.update(withLevel: normalizeValue)
+    }
 }

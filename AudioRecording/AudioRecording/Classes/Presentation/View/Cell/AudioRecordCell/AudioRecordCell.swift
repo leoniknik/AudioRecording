@@ -18,6 +18,8 @@ final class AudioRecordCell: UITableViewCell {
     weak var delegate: AudioRecordCellDelegate?
     
     @IBOutlet weak var cellButton: UIButton!
+    @IBOutlet weak var recordTitle: UILabel!
+    @IBOutlet weak var recordDuration: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +31,11 @@ final class AudioRecordCell: UITableViewCell {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         delegate?.buttonPressed(row: row)
+    }
+    
+    func configure(viewModel: RecordViewModel) {
+        recordTitle.text = viewModel.recordTitle
+        recordDuration.text = "\(viewModel.duration)"
     }
     
     func play() {
