@@ -51,7 +51,7 @@ final class RecordingViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         runTimer()
-        model.play()
+        model.startRecording()
     }
     
     private func setupUI() {
@@ -66,19 +66,13 @@ final class RecordingViewController: UIViewController {
     }
     
     private func runTimer() {
-        timerLabel.text = timeString(time: TimeInterval(seconds))
+        timerLabel.text = TimeInterval(seconds).timeString()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: #selector(updateTimer), userInfo: nil, repeats: true)
-    }
-    
-    private func timeString(time: TimeInterval) -> String {
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format: "%02i:%02i", minutes, seconds)
     }
     
     @objc func updateTimer() {
         seconds += 1
-        timerLabel.text = timeString(time: TimeInterval(seconds))
+        timerLabel.text = TimeInterval(seconds).timeString()
     }
     
     func updateWaveView(normalizedValue: CGFloat) {
@@ -91,14 +85,22 @@ final class RecordingViewController: UIViewController {
     }
     
     @IBAction func pausePressed(_ sender: UIButton) {
-        model.stop()
+        model.stopRecording()
         timer.invalidate()
         animateViews()
     }
     
-    
     @IBAction func playPressed(_ sender: UIButton) {
         model.playOrPause(sender)
+    }
+    
+    @IBAction func deletePressed(_ sender: UIButton) {
+        model.deleteRecord()
+        seconds = 0
+        timerLabel.text = TimeInterval(seconds).timeString()
+        model.startRecording()
+        runTimer()
+        animateViewsForRecording()
     }
     
     func animateViews() {
@@ -123,9 +125,37 @@ final class RecordingViewController: UIViewController {
             self.deleteButton.alpha = 1.0
         }
     }
+    
+    func animateViewsForRecording() {
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIView.transition(with: pauseButton, duration: 0.5, options: transitionOptions, animations: {
+            self.pauseButton.isHidden = false
+        })
+        
+        UIView.transition(with: confirmButton, duration: 0.5, options: transitionOptions, animations: {
+            self.confirmButton.isHidden = true
+        })
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.waveformView.alpha = 1.0
+        })
+        
+        playButton.isEnabled = false
+        deleteButton.isEnabled = false
+        UIView.animate(withDuration: 0.5) {
+            self.playButton.alpha = 0.0
+            self.deleteButton.alpha = 0.0
+        }
+    }
 }
 
 extension RecordingViewController: RecordingPresentationModelDelegate {
+    
+    func playingFinished() {
+        playButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+    }
+    
     func updateMeters(_ normalizeValue: CGFloat) {
         waveformView.update(withLevel: normalizeValue)
     }

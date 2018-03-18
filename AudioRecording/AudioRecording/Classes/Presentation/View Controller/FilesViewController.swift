@@ -36,21 +36,35 @@ final class FilesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        model.obtainAudioRecords()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        model.obtainAudioRecords()
     }
     
     private func setupUI() {
         title = "Аудиозаписи"
         setupTableView()
         setupMicrophoneButton()
+    }
+    
+    private func bindEvents() {
+        model.changeStateHandler = { [unowned self] status in
+            switch status {
+            case .loading:
+                break
+            case .rich:
+                self.tableView.reloadData()
+            case .error(let message):
+                print(message)
+            }
+        }
     }
     
     private func setupTableView() {
@@ -75,6 +89,11 @@ final class FilesViewController: UIViewController {
     }
     
     @IBAction func record(_ sender: UIButton) {
+        if playingRow != -1 {
+            model.stopRecord(item: playingRow)
+            playingRow = -1
+//            tableView.reloadData()
+        }
         guard let viewcontroller = rootAssembly.recordingAssembly.recordingViewController() else { return }
         viewcontroller.transitioningDelegate = self
         viewcontroller.modalPresentationStyle = .custom
@@ -108,12 +127,33 @@ extension FilesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            model.deleteRecord(item: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 extension FilesViewController: AudioRecordCellDelegate {
     
     func buttonPressed(row: Int) {
+        if playingRow == row {
+            model.stopRecord(item: row)
+        } else {
+            model.playRecord(item: row)
+        }
         playingRow = row
+        tableView.reloadData()
+    }
+    
+}
+
+extension FilesViewController: FilesPresentationModelDelegate {
+    
+    func playingFinished() {
+        playingRow = -1
         tableView.reloadData()
     }
     

@@ -18,6 +18,7 @@
 		CA871C9C205E828F009BDDB0 /* FileServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA871C9B205E828F009BDDB0 /* FileServiceProtocol.swift */; };
 		CA871C9E205E829A009BDDB0 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA871C9D205E829A009BDDB0 /* FileService.swift */; };
 		CA871CA0205E96FF009BDDB0 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA871C9F205E96FF009BDDB0 /* WaveView.swift */; };
+		CA871CA2205EFDE1009BDDB0 /* String+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA871CA1205EFDE1009BDDB0 /* String+Time.swift */; };
 		CA876BEA2053F79C003E81DC /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA876BE82053F79C003E81DC /* RecordingViewController.swift */; };
 		CA876BED20540048003E81DC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA876BEC20540048003E81DC /* Storyboard.storyboard */; };
 		CAD718772052FBBB007D5239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD718762052FBBB007D5239 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		CA871C9B205E828F009BDDB0 /* FileServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileServiceProtocol.swift; sourceTree = "<group>"; };
 		CA871C9D205E829A009BDDB0 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		CA871C9F205E96FF009BDDB0 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		CA871CA1205EFDE1009BDDB0 /* String+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Time.swift"; sourceTree = "<group>"; };
 		CA876BE82053F79C003E81DC /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		CA876BEC20540048003E81DC /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		CAD718732052FBBB007D5239 /* AudioRecording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecording.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 			children = (
 				CA871C8D205E728F009BDDB0 /* FilesViewController+BubbleAnimationDelegate.swift */,
 				CA871C9F205E96FF009BDDB0 /* WaveView.swift */,
+				CA871CA1205EFDE1009BDDB0 /* String+Time.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				CA871C90205E7576009BDDB0 /* RecordingPresentationModel.swift in Sources */,
 				CA871CA0205E96FF009BDDB0 /* WaveView.swift in Sources */,
 				CADA9C89205434430031433B /* UIColors.swift in Sources */,
+				CA871CA2205EFDE1009BDDB0 /* String+Time.swift in Sources */,
 				CA871C9A205E7DF1009BDDB0 /* RecordingAssembly.swift in Sources */,
 				CA871C9E205E829A009BDDB0 /* FileService.swift in Sources */,
 			);

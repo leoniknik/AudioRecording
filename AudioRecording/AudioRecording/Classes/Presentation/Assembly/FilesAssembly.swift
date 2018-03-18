@@ -18,6 +18,7 @@ final class FilesAssembly {
     func filesViewController() -> FilesViewController {
         let model = FilesPresentationModel()
         let viewController = FilesViewController(rootAssembly: rootAssembly, model: model)
+        model.delegate = viewController
         return viewController
     }
 }

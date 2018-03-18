@@ -10,6 +10,7 @@ import UIKit
 
 protocol RecordingPresentationModelDelegate: class {
     func updateMeters(_ normalizeValue: CGFloat)
+    func playingFinished()
 }
 
 final class RecordingPresentationModel: PresentationModel {
@@ -31,33 +32,57 @@ final class RecordingPresentationModel: PresentationModel {
     
     func playOrPause(_ sender: UIButton) {
         if !isPlaying {
-            play()
+            startPlaying()
             sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         } else {
-            stop()
+            stopPlaying()
             sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
         }
     }
     
-    deinit {
-        stop()
-        audioService.clear()
-    }
-    
-    func play() {
+    func startPlaying() {
         guard let url = recordUrl else { return }
         audioService.setupPlayer(url: url)
         audioService.startPlaying()
         isPlaying = true
     }
     
-    func stop() {
+    func stopPlaying() {
         isPlaying = false
+        audioService.stopPlaying()
+    }
+    
+    func startRecording() {
+        audioService.startRecording()
+    }
+    
+    func stopRecording() {
         audioService.stopRecording()
+    }
+    
+    func deleteRecord() {
+        guard let url = recordUrl else { return }
+        fileService.delete(url: url)
+    }
+    
+    deinit {
+        stopRecording()
+        stopPlaying()
+        audioService.clear()
     }
 }
 
 extension RecordingPresentationModel: AudioServiceDelegate {
+    
+    func recordingFinished() {
+        
+    }
+    
+    func playingFinished() {
+        isPlaying = false
+        delegate?.playingFinished()
+    }
+    
     func updateMeters(_ normalizeValue: CGFloat) {
         delegate?.updateMeters(normalizeValue)
     }

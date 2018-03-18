@@ -9,16 +9,18 @@
 import Foundation
 import AVFoundation
 
-protocol AudioServiceDelegate: class {
-    func updateMeters(_ normalizeValue: CGFloat)
+@objc protocol AudioServiceDelegate: class {
+    @objc optional func updateMeters(_ normalizeValue: CGFloat)
+    @objc optional func recordingFinished()
+    @objc optional func playingFinished()
 }
 
 final class AudioService: NSObject, AudioServiceProtocol {
 
     weak var delegate: AudioServiceDelegate?
     
-    var recorder: AVAudioRecorder!
-    var player: AVAudioPlayer!
+    var recorder: AVAudioRecorder?
+    var player: AVAudioPlayer?
     var displayLink: CADisplayLink?
     
     func setupRecorder(url: URL) {
@@ -37,6 +39,7 @@ final class AudioService: NSObject, AudioServiceProtocol {
             return
         }
         
+        guard let recorder = recorder else { return }
         recorder.prepareToRecord()
         recorder.isMeteringEnabled = true
         recorder.delegate = self
@@ -47,9 +50,10 @@ final class AudioService: NSObject, AudioServiceProtocol {
     }
     
     @objc func updateMeters() {
+        guard let recorder = recorder else { return }
         recorder.updateMeters()
         let normalizedValue: CGFloat = pow(10, CGFloat(recorder.averagePower(forChannel: 0))/20) + 0.05
-        delegate?.updateMeters(normalizedValue)
+        delegate?.updateMeters?(normalizedValue)
     }
     
     func setupPlayer(url: URL) {
@@ -59,26 +63,26 @@ final class AudioService: NSObject, AudioServiceProtocol {
             return
         }
         
-        player.delegate = self
-        player.prepareToPlay()
-        player.volume = 1.0
+        player?.delegate = self
+        player?.prepareToPlay()
+        player?.volume = 1.0
     }
     
     func stopRecording() {
-        recorder.stop()
+        recorder?.stop()
     }
     
     func startRecording() {
-        recorder.prepareToRecord()
-        recorder.record()
+        recorder?.prepareToRecord()
+        recorder?.record()
     }
     
     func startPlaying() {
-        player.play()
+        player?.play()
     }
     
     func stopPlaying() {
-        player.stop()
+        player?.stop()
     }
     
     func clear() {
@@ -89,9 +93,10 @@ final class AudioService: NSObject, AudioServiceProtocol {
 
 extension AudioService: AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        delegate?.recordingFinished?()
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        
+        delegate?.playingFinished?()
     }
 }

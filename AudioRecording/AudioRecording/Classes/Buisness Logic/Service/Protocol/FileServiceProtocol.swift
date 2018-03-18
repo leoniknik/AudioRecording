@@ -10,4 +10,6 @@ import Foundation
 
 protocol FileServiceProtocol {
     func getFileURL() -> URL?
+    func find(byName name: String) -> URL?
+    func delete(url: URL)
 }

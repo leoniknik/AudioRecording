@@ -11,14 +11,28 @@ import Foundation
 final class FileService: FileServiceProtocol {
     
     func getFileURL() -> URL? {
+        return find(byName: recordTitle)
+    }
+    
+    func find(byName name: String) -> URL? {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
-        let filePath = documentsURL.appendingPathComponent(recordTitle)
+        let filePath = documentsURL.appendingPathComponent(name)
         return filePath
     }
     
-    var recordTitle: String {
+    func delete(url: URL) {
+        let fileManager = FileManager.default
+        do {
+            try fileManager.removeItem(at: url)
+        }
+        catch let error {
+            print(error)
+        }
+    }
+    
+    private var recordTitle: String {
         let defaults = UserDefaults()
         var number = defaults.integer(forKey: "number")
         let recordTitle = "Запись \(number)"

@@ -10,9 +10,9 @@ import Foundation
 
 final class RecordViewModel {
     var recordTitle: String
-    var duration: Double
+    var duration: String
     
-    init(recordTitle: String, duration: Double) {
+    init(recordTitle: String, duration: String) {
         self.recordTitle = recordTitle
         self.duration = duration
     }
