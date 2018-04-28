@@ -55,10 +55,10 @@ final class RecordingViewController: UIViewController {
     }
     
     private func setupUI() {
-        splashView.backgroundColor = .ccRed
-        topView.backgroundColor = .ccRed
+        splashView.backgroundColor = .ccBlue
+        topView.backgroundColor = .ccBlue
         
-        waveformView.waveColor = UIColor.red
+        waveformView.waveColor = .ccBlue
         waveformView.backgroundColor = .white
         waveformView.primaryWaveLineWidth = 3.0
         waveformView.secondaryWaveLineWidth = 1.0

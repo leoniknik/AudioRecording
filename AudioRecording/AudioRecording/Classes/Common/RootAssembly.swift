@@ -20,4 +20,19 @@ final class RootAssembly {
         return assembly
     }()
     
+    lazy var loginAssembly: LoginAssembly = {
+        let assembly = LoginAssembly(rootAssembly: self)
+        return assembly
+    }()
+    
+    lazy var distributionAssembly: DistributionAssembly = {
+        let assembly = DistributionAssembly(rootAssembly: self)
+        return assembly
+    }()
+    
+    lazy var contactsAssembly: ContactsAssembly = {
+        let assembly = ContactsAssembly(rootAssembly: self)
+        return assembly
+    }()
+    
 }

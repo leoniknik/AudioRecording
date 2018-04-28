@@ -9,7 +9,7 @@
 import Foundation
 
 protocol AudioServiceProtocol {
-    weak var delegate: AudioServiceDelegate? { get set }
+    var delegate: AudioServiceDelegate? { get set }
     
     func setupRecorder(url: URL)
     func setupPlayer(url: URL)
