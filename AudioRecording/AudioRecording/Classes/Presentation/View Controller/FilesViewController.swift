@@ -9,11 +9,18 @@
 import UIKit
 import BubbleTransition
 
+protocol FilesViewControllerDelegate: class {
+    func recordDidSelected(_ record: RecordViewModel)
+}
+
 final class FilesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var bottomView: UIView!
+    
+    var isFromMessage = false
+    weak var delegate: FilesViewControllerDelegate?
     
     private var rootAssembly: RootAssembly
     private var model: FilesPresentationModel
@@ -49,6 +56,9 @@ final class FilesViewController: UIViewController {
     }
     
     private func setupUI() {
+        if isFromMessage {
+            addBackButton()
+        }
         title = "Аудиозаписи"
         setupTableView()
         setupMicrophoneButton()
@@ -133,6 +143,12 @@ extension FilesViewController: UITableViewDataSource, UITableViewDelegate {
             model.deleteRecord(item: indexPath.item)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let record = model.audioRecords[indexPath.item]
+        delegate?.recordDidSelected(record)
+        navigationController?.popViewController(animated: true)
     }
 }
 

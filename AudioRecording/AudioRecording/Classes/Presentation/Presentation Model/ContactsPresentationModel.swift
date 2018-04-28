@@ -12,7 +12,12 @@ final class ContactsPresentationModel: PresentationModel {
     
     var contacts = [ContactViewModel]()
     
+    var choosenContacts: [ContactViewModel] {
+        return contacts.filter { $0.isChoosen }
+    }
+    
     let contactsService = ServiceLayer.shared.contactsService
+    let distributionProvider = DistributionProvider()
     
     func obtainContacts() {
         state = .loading
@@ -32,8 +37,19 @@ final class ContactsPresentationModel: PresentationModel {
     
     func addCustomNumber(number: String) {
         let contact = ContactViewModel(name: "Добавленный номер", number: number)
+        contact.isChoosen = true
         contacts.append(contact)
         state = .rich
+    }
+    
+    func saveDistribution(title: String) -> Bool {
+        if distributionProvider.checkDistribution(byName: title) {
+            return false
+        }
+        let contacts = choosenContacts.map {
+            Contact(name: $0.name, number: $0.number)
+        }
+        return distributionProvider.saveDistribution(title: title, contacts: contacts)
     }
     
 }

@@ -13,6 +13,13 @@
 		CA4652D820643E500040DD45 /* ModalLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4652D720643E500040DD45 /* ModalLoadingIndicator.swift */; };
 		CA4652DA20643FB00040DD45 /* UIViewController+ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4652D920643FB00040DD45 /* UIViewController+ShowError.swift */; };
 		CA4652DE206442950040DD45 /* RequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4652DD206442950040DD45 /* RequestConfig.swift */; };
+		CA67D72E2094D3C500947D30 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D72C2094D3C500947D30 /* NumberCell.swift */; };
+		CA67D72F2094D3C500947D30 /* NumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA67D72D2094D3C500947D30 /* NumberCell.xib */; };
+		CA67D7312094DC9100947D30 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D7302094DC9100947D30 /* MessageViewModel.swift */; };
+		CA67D7332094EFA900947D30 /* RMContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D7322094EFA900947D30 /* RMContact.swift */; };
+		CA67D73520950B9300947D30 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D73420950B9300947D30 /* Distribution.swift */; };
+		CA67D73720950BE300947D30 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D73620950BE300947D30 /* Contact.swift */; };
+		CA6EF6752094713600A0D059 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6EF6742094713600A0D059 /* Parser.swift */; };
 		CA7DA41D208DD30300A2222B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7DA41B208DD30300A2222B /* KeyboardViewController.swift */; };
 		CA7DA41E208DD30300A2222B /* KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7DA41C208DD30300A2222B /* KeyboardViewController.xib */; };
 		CA7DB16A208CF2F4000F54A0 /* RMDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7DB169208CF2F4000F54A0 /* RMDistribution.swift */; };
@@ -45,6 +52,11 @@
 		CA876BED20540048003E81DC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA876BEC20540048003E81DC /* Storyboard.storyboard */; };
 		CAA9566620642C45003F4742 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA9566420642C45003F4742 /* LoginViewController.swift */; };
 		CAA9566720642C45003F4742 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA9566520642C45003F4742 /* LoginViewController.xib */; };
+		CAABFA0220947D3900886D90 /* AuthUserParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABFA0120947D3900886D90 /* AuthUserParser.swift */; };
+		CAABFA052094968C00886D90 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABFA032094968C00886D90 /* SendViewController.swift */; };
+		CAABFA062094968C00886D90 /* SendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAABFA042094968C00886D90 /* SendViewController.xib */; };
+		CAABFA08209496CD00886D90 /* SendPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABFA07209496CD00886D90 /* SendPresentationModel.swift */; };
+		CAABFA0A209496F600886D90 /* SendAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABFA09209496F600886D90 /* SendAssembly.swift */; };
 		CABB93BC208CBE5F00D699A9 /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BB208CBE5F00D699A9 /* RequestSender.swift */; };
 		CABB93BE208CBFAA00D699A9 /* RequestSenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BD208CBFAA00D699A9 /* RequestSenderProtocol.swift */; };
 		CABB93C0208CC04B00D699A9 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BF208CC04B00D699A9 /* AuthServiceProtocol.swift */; };
@@ -79,6 +91,13 @@
 		CA4652D720643E500040DD45 /* ModalLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLoadingIndicator.swift; sourceTree = "<group>"; };
 		CA4652D920643FB00040DD45 /* UIViewController+ShowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowError.swift"; sourceTree = "<group>"; };
 		CA4652DD206442950040DD45 /* RequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfig.swift; sourceTree = "<group>"; };
+		CA67D72C2094D3C500947D30 /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
+		CA67D72D2094D3C500947D30 /* NumberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCell.xib; sourceTree = "<group>"; };
+		CA67D7302094DC9100947D30 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		CA67D7322094EFA900947D30 /* RMContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMContact.swift; sourceTree = "<group>"; };
+		CA67D73420950B9300947D30 /* Distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
+		CA67D73620950BE300947D30 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		CA6EF6742094713600A0D059 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		CA7DA41B208DD30300A2222B /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		CA7DA41C208DD30300A2222B /* KeyboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardViewController.xib; sourceTree = "<group>"; };
 		CA7DB169208CF2F4000F54A0 /* RMDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMDistribution.swift; sourceTree = "<group>"; };
@@ -111,6 +130,11 @@
 		CA876BEC20540048003E81DC /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		CAA9566420642C45003F4742 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CAA9566520642C45003F4742 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		CAABFA0120947D3900886D90 /* AuthUserParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserParser.swift; sourceTree = "<group>"; };
+		CAABFA032094968C00886D90 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		CAABFA042094968C00886D90 /* SendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendViewController.xib; sourceTree = "<group>"; };
+		CAABFA07209496CD00886D90 /* SendPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPresentationModel.swift; sourceTree = "<group>"; };
+		CAABFA09209496F600886D90 /* SendAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAssembly.swift; sourceTree = "<group>"; };
 		CABB93BB208CBE5F00D699A9 /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
 		CABB93BD208CBFAA00D699A9 /* RequestSenderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSenderProtocol.swift; sourceTree = "<group>"; };
 		CABB93BF208CC04B00D699A9 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
@@ -170,10 +194,29 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		CA67D72B2094D3AB00947D30 /* NumberCell */ = {
+			isa = PBXGroup;
+			children = (
+				CA67D72C2094D3C500947D30 /* NumberCell.swift */,
+				CA67D72D2094D3C500947D30 /* NumberCell.xib */,
+			);
+			path = NumberCell;
+			sourceTree = "<group>";
+		};
+		CA6EF6732094712400A0D059 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				CA6EF6742094713600A0D059 /* Parser.swift */,
+				CAABFA0120947D3900886D90 /* AuthUserParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		CA7DB168208CF2C3000F54A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CA7DB169208CF2F4000F54A0 /* RMDistribution.swift */,
+				CA67D7322094EFA900947D30 /* RMContact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +348,7 @@
 		CAD7188C2052FDDD007D5239 /* Buisness Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CA6EF6732094712400A0D059 /* Parser */,
 				CA4652DC206441FC0040DD45 /* Request */,
 				CA871C93205E75EC009BDDB0 /* Service */,
 				CA871C91205E75AA009BDDB0 /* ServiceLayer.swift */,
@@ -316,6 +360,8 @@
 			isa = PBXGroup;
 			children = (
 				CABB93C1208CC12400D699A9 /* AuthResult.swift */,
+				CA67D73420950B9300947D30 /* Distribution.swift */,
+				CA67D73620950BE300947D30 /* Contact.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +387,7 @@
 		CAD7189420530A3E007D5239 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CAABFA032094968C00886D90 /* SendViewController.swift */,
 				CA7DA41B208DD30300A2222B /* KeyboardViewController.swift */,
 				CA7DB175208D2B4C000F54A0 /* ContactsViewController.swift */,
 				CABB93C9208CD3D600D699A9 /* DistributionViewController.swift */,
@@ -359,6 +406,7 @@
 				CA4652D5206433F80040DD45 /* LoginPresentationModel.swift */,
 				CABB93CD208CD43B00D699A9 /* DistributionPresentationModel.swift */,
 				CA7DB17E208DB4A8000F54A0 /* ContactsPresentationModel.swift */,
+				CAABFA07209496CD00886D90 /* SendPresentationModel.swift */,
 			);
 			path = "Presentation Model";
 			sourceTree = "<group>";
@@ -366,6 +414,7 @@
 		CAD7189620530A5B007D5239 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				CA67D7302094DC9100947D30 /* MessageViewModel.swift */,
 				CA871C8B205E6EF0009BDDB0 /* RecordViewModel.swift */,
 				CA7DB184208DC122000F54A0 /* ContactViewModel.swift */,
 			);
@@ -392,6 +441,7 @@
 				CA4652D32064336B0040DD45 /* LoginAssembly.swift */,
 				CABB93C7208CD35D00D699A9 /* DistributionAssembly.swift */,
 				CA7DB180208DB4D1000F54A0 /* ContactsAssembly.swift */,
+				CAABFA09209496F600886D90 /* SendAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -418,6 +468,7 @@
 				CABB93CA208CD3D600D699A9 /* DistributionViewController.xib */,
 				CA7DB176208D2B4C000F54A0 /* ContactsViewController.xib */,
 				CA7DA41C208DD30300A2222B /* KeyboardViewController.xib */,
+				CAABFA042094968C00886D90 /* SendViewController.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -425,6 +476,7 @@
 		CAD718A520534A8C007D5239 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CA67D72B2094D3AB00947D30 /* NumberCell */,
 				CA7DB179208DB0D0000F54A0 /* ContactCell */,
 				CAD718A620534AA7007D5239 /* AudioRecordCell */,
 			);
@@ -519,6 +571,8 @@
 				CABB93CC208CD3D600D699A9 /* DistributionViewController.xib in Resources */,
 				CABB93D3208CE9F700D699A9 /* DistributionFooterView.xib in Resources */,
 				CAD7189320530A32007D5239 /* FilesViewController.xib in Resources */,
+				CAABFA062094968C00886D90 /* SendViewController.xib in Resources */,
+				CA67D72F2094D3C500947D30 /* NumberCell.xib in Resources */,
 				CA7DB17D208DB0E9000F54A0 /* ContactCell.xib in Resources */,
 				CA876BED20540048003E81DC /* Storyboard.storyboard in Resources */,
 				CA7DB178208D2B4C000F54A0 /* ContactsViewController.xib in Resources */,
@@ -573,6 +627,8 @@
 				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -582,6 +638,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,12 +654,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAABFA0220947D3900886D90 /* AuthUserParser.swift in Sources */,
+				CA67D7332094EFA900947D30 /* RMContact.swift in Sources */,
 				CAA9566620642C45003F4742 /* LoginViewController.swift in Sources */,
 				CABB93C4208CC18700D699A9 /* AuthService.swift in Sources */,
 				CABB93C8208CD35D00D699A9 /* DistributionAssembly.swift in Sources */,
 				CA871C96205E7616009BDDB0 /* AudioServiceProtocol.swift in Sources */,
 				CAD718A020530BEC007D5239 /* PresentationModel.swift in Sources */,
 				CAD718A420530E2B007D5239 /* FilesAssembly.swift in Sources */,
+				CAABFA0A209496F600886D90 /* SendAssembly.swift in Sources */,
 				CAD7189220530A32007D5239 /* FilesViewController.swift in Sources */,
 				CA871C8C205E6EF0009BDDB0 /* RecordViewModel.swift in Sources */,
 				CABB93BE208CBFAA00D699A9 /* RequestSenderProtocol.swift in Sources */,
@@ -612,6 +673,7 @@
 				CABB93C6208CC26900D699A9 /* AuthUserRequest.swift in Sources */,
 				CA871C9C205E828F009BDDB0 /* FileServiceProtocol.swift in Sources */,
 				CA4652DA20643FB00040DD45 /* UIViewController+ShowError.swift in Sources */,
+				CA67D7312094DC9100947D30 /* MessageViewModel.swift in Sources */,
 				CA7DB177208D2B4C000F54A0 /* ContactsViewController.swift in Sources */,
 				CA871C92205E75AA009BDDB0 /* ServiceLayer.swift in Sources */,
 				CA7DA41D208DD30300A2222B /* KeyboardViewController.swift in Sources */,
@@ -619,6 +681,7 @@
 				CA871C8E205E728F009BDDB0 /* FilesViewController+BubbleAnimationDelegate.swift in Sources */,
 				CA7DB181208DB4D1000F54A0 /* ContactsAssembly.swift in Sources */,
 				CA876BEA2053F79C003E81DC /* RecordingViewController.swift in Sources */,
+				CAABFA052094968C00886D90 /* SendViewController.swift in Sources */,
 				CAD7189B20530AAE007D5239 /* RootAssembly.swift in Sources */,
 				CAD718772052FBBB007D5239 /* AppDelegate.swift in Sources */,
 				CA7DB171208CFF15000F54A0 /* UIViewController+SetupDefaultNavController.swift in Sources */,
@@ -630,18 +693,23 @@
 				CA4652DE206442950040DD45 /* RequestConfig.swift in Sources */,
 				CA7DB16A208CF2F4000F54A0 /* RMDistribution.swift in Sources */,
 				CA7DB189208DC572000F54A0 /* ContactsService.swift in Sources */,
+				CAABFA08209496CD00886D90 /* SendPresentationModel.swift in Sources */,
 				CA7DB17F208DB4A8000F54A0 /* ContactsPresentationModel.swift in Sources */,
+				CA67D73520950B9300947D30 /* Distribution.swift in Sources */,
 				CADA9C89205434430031433B /* UIColors.swift in Sources */,
 				CABB93C0208CC04B00D699A9 /* AuthServiceProtocol.swift in Sources */,
 				CA871CA2205EFDE1009BDDB0 /* String+Time.swift in Sources */,
 				CA871C9A205E7DF1009BDDB0 /* RecordingAssembly.swift in Sources */,
 				CABB93D1208CE9DF00D699A9 /* DistributionFooterView.swift in Sources */,
+				CA67D72E2094D3C500947D30 /* NumberCell.swift in Sources */,
 				CA7DB16F208CFE52000F54A0 /* LoginViewController+UITabbarController.swift in Sources */,
 				CABB93CB208CD3D600D699A9 /* DistributionViewController.swift in Sources */,
+				CA6EF6752094713600A0D059 /* Parser.swift in Sources */,
 				CA7DB16D208CF448000F54A0 /* DistributionProvider.swift in Sources */,
 				CABB93BC208CBE5F00D699A9 /* RequestSender.swift in Sources */,
 				CA7DB187208DC551000F54A0 /* ContactsServiceProtocol.swift in Sources */,
 				CABB93C2208CC12400D699A9 /* AuthResult.swift in Sources */,
+				CA67D73720950BE300947D30 /* Contact.swift in Sources */,
 				CA871C9E205E829A009BDDB0 /* FileService.swift in Sources */,
 				CA4652D6206433F80040DD45 /* LoginPresentationModel.swift in Sources */,
 				CA4652D42064336B0040DD45 /* LoginAssembly.swift in Sources */,

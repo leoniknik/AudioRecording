@@ -37,23 +37,13 @@ final class RequestSender: RequestSenderProtocol {
             .responseJSON(queue: utilityQueue) { response in
                 switch response.result {
                 case .success:
-                    guard let data = response.data else {
+                    guard let result = config.parser.parse(response) else {
                         completionHandler?(Result.error("Ошибка при получении данных"))
                         return
                     }
-                    do {
-                        print(data)
-                        let a = response.result.value! as! Bool
-                        print(a)
-                        let result = try JSONDecoder().decode(config.parser, from: data)
-                        completionHandler?(Result.success(result))
-                    } catch let error {
-                        debugPrint(error)
-                        completionHandler?(Result.error("Ошибка парсинга данных"))
-                    }
+                    completionHandler?(Result.success(result))
                 case .failure(let error):
                     debugPrint(error)
-                    debugPrint(error.localizedDescription)
                     completionHandler?(Result.error("Нет связи с сервером"))
                 }
         }

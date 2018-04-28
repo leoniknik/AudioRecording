@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let rootAssembly = RootAssembly()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        configRealm()
         setupTabBar()
         openInitialViewController()
         return true
@@ -34,6 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupTabBar() {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.ccBlue], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.ccBlue], for: .normal)
+    }
+    
+    private func configRealm() {
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { _, oldSchemaVersion in
+                if oldSchemaVersion < 1 {
+                }
+        })
+        Realm.Configuration.defaultConfiguration = config
     }
 }
 

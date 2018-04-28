@@ -9,7 +9,11 @@
 import Foundation
 
 class AuthResult: Decodable {
-    let isLogined: Bool = false
+    var isLogined: Bool = false
+    
+    init(isLogined: Bool) {
+        self.isLogined = isLogined
+    }
     
     enum CodingKeys: String, CodingKey {
         case isLogined = ""

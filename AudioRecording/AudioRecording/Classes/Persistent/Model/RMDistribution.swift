@@ -11,4 +11,5 @@ import RealmSwift
 
 class RMDistribution: Object {
     @objc dynamic var title: String = ""
+    let contacts = LinkingObjects(fromType: RMContact.self, property: "distribution")
 }

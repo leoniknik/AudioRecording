@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class LoginViewController: UIViewController {
 
@@ -17,6 +19,8 @@ class LoginViewController: UIViewController {
     
     var rootAssembly: RootAssembly!
     var model: LoginPresentationModel!
+    
+    private var disposeBag = DisposeBag()
     
     init(rootAssembly: RootAssembly, model: LoginPresentationModel) {
         self.model = model
@@ -32,6 +36,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindEvents()
+        validateForm()
     }
     
     func setupUI() {
@@ -93,8 +98,25 @@ class LoginViewController: UIViewController {
     }
     
     private func openMainScreen() {
-        let tabBarController = setupTabBarController()
-        present(tabBarController, animated: true, completion: nil)
+        if model.isLogined {
+            let tabBarController = setupTabBarController()
+            present(tabBarController, animated: true, completion: nil)
+        } else {
+            showError("Неверный логин или пароль")
+        }
+    }
+    
+    private func validateForm() {
+        loginButton.isEnabled = false
+        
+        Observable.combineLatest(
+            loginTextField.rx.text.orEmpty,
+            passwordTextField.rx.text.orEmpty,
+            resultSelector: { (login, password) -> Bool in
+                return login.count > 0 && password.count > 0
+        })
+            .bind(to: loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 
 }

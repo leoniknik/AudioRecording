@@ -35,4 +35,9 @@ final class RootAssembly {
         return assembly
     }()
     
+    lazy var sendAssembly: SendAssembly = {
+        let assembly = SendAssembly(rootAssembly: self)
+        return assembly
+    }()
+    
 }

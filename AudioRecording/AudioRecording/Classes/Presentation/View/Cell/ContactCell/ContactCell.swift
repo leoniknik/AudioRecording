@@ -24,7 +24,7 @@ class ContactCell: UITableViewCell {
     }
     
     func setupUI() {
-        chooseView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        chooseView.backgroundColor = UIColor.white
         chooseView.layer.borderColor = UIColor.gray.cgColor
         chooseView.layer.borderWidth = 1.0
         chooseView.layer.cornerRadius = chooseView.frame.width / 2.0

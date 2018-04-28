@@ -11,6 +11,7 @@ import UIKit
 final class ContactsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nextButton: UIButton!
     
     let cellID = "\(ContactCell.self)"
     var rootAssembly: RootAssembly!
@@ -48,6 +49,13 @@ final class ContactsViewController: UIViewController {
         navigationItem.title = "Выберите контакты"
         addBackButton()
         addKeyboardBarItem()
+        setupBottom()
+    }
+    
+    private func setupBottom() {
+        nextButton.backgroundColor = .ccGreen
+        nextButton.layer.cornerRadius = 20
+        nextButton.clipsToBounds = true
     }
     
     private func addKeyboardBarItem() {
@@ -76,6 +84,37 @@ final class ContactsViewController: UIViewController {
         }
     }
     
+    @IBAction func nextTapped(_ sender: UIButton) {
+        if model.choosenContacts.count == 0 {
+            showError("Выберите хотя бы один номер")
+        } else {
+            showAlert()
+        }
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Рассылка", message: "Введите название", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: nil)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert, weak self] (_) in
+            guard let textField = alert?.textFields?[0], !(textField.text?.isEmpty ?? true) else { return }
+            self?.showMessageScreen(title: textField.text ?? "")
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showMessageScreen(title: String) {
+        if model.saveDistribution(title: title) {
+            let message = MessageViewModel(contacts: model.choosenContacts)
+            let viewcontroller = rootAssembly.sendAssembly.sendViewController(message: message)
+            navigationController?.pushViewController(viewcontroller, animated: true)
+        } else {
+            showError("Рассылка с таким именем уже существует")
+        }
+    }
+    
 }
 
 extension ContactsViewController: UITableViewDelegate {
@@ -97,7 +136,7 @@ extension ContactsViewController: UITableViewDataSource {
             cell.chooseView.backgroundColor = .ccBlue
             cell.chooseView.layer.borderColor = UIColor.white.cgColor
         } else {
-            cell.chooseView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+            cell.chooseView.backgroundColor = UIColor.white
             cell.chooseView.layer.borderColor = UIColor.gray.cgColor
         }
         cell.nameLabel.text = contact.name

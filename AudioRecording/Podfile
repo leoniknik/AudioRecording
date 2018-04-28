@@ -9,5 +9,7 @@ target 'AudioRecording' do
   pod 'Alamofire'
   pod 'RealmSwift'
   pod 'InputMask'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end

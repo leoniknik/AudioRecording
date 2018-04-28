@@ -18,6 +18,7 @@ class AuthUserRequest: RequestConfig<AuthResult> {
         let headers: HTTPHeaders = [
             "Content-Type" : "application/json"
         ]
-        super.init(url: "/Login", parameters: parameters, headers: headers, method: .post, encoding: JSONEncoding.default, parser: AuthResult.self)
+        let parser = AuthUserParser()
+        super.init(url: "/Login", parameters: parameters, headers: headers, method: .post, encoding: JSONEncoding.default, parser: parser)
     }
 }
