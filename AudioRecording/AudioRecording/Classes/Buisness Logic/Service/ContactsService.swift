@@ -24,7 +24,10 @@ final class ContactsService: ContactsServiceProtocol {
                 (contact, stop) in
                 contacts.append(contact)
             }
-            completion?(Result.success(contacts))
+            let result = contacts.map {
+                Contact(name: $0.givenName, number: $0.phoneNumbers.first?.value.stringValue ?? "")
+            }
+            completion?(Result.success(result))
         } catch {
             print("unable to fetch contacts")
             completion?(Result.error("Не удалось получить доступ к контактам"))

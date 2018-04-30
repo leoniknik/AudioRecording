@@ -36,6 +36,16 @@ class SendViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let keyboardButton = UIBarButtonItem(image: #imageLiteral(resourceName: "dollar").withRenderingMode(.automatic), style: .done, target: self, action: #selector(showCost))
+        navigationItem.setRightBarButton(keyboardButton , animated: false)
+    }
+    
+    @objc func showCost() {
+        model.getCost()
+    }
+    
     private func setupUI() {
         navigationItem.title = "Отправка сообщения"
         setupSendButton()

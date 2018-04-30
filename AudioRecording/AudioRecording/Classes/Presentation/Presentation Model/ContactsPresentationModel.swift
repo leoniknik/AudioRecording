@@ -19,15 +19,26 @@ final class ContactsPresentationModel: PresentationModel {
     let contactsService = ServiceLayer.shared.contactsService
     let distributionProvider = DistributionProvider()
     
+    init(contacts: [ContactViewModel] = []) {
+        for contact in contacts {
+            self.contacts.append(ContactViewModel(name: contact.name, number: contact.number, isChoosen: true))
+        }
+    }
+    
     func obtainContacts() {
         state = .loading
         contactsService.obtainContacts { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
-            case .success(let contacts):
-                self.contacts = contacts.map({
-                    ContactViewModel(name: $0.givenName, number: $0.phoneNumbers.first?.value.stringValue ?? "")
-                })
+            case .success(let newContacts):
+                let numberArray = self.contacts.map { $0.number }
+                for newContact in newContacts {
+                    if numberArray.contains(newContact.number) {
+                        continue
+                    } else {
+                        self.contacts.append(ContactViewModel(name: newContact.name, number: newContact.number))
+                    }
+                }
                 self.state = .rich
             case .error(let error):
                 self.state = .error(message: error)

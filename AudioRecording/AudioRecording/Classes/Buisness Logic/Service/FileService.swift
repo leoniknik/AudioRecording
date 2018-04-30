@@ -15,10 +15,9 @@ final class FileService: FileServiceProtocol {
     }
     
     func find(byName name: String) -> URL? {
-        let fileManager = FileManager.default
-        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        guard let dir = Constants.recordsPath else { return nil }
         
-        let filePath = documentsURL.appendingPathComponent(name)
+        let filePath = dir.appendingPathComponent(name)
         return filePath
     }
     

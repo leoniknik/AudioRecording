@@ -12,16 +12,19 @@ final class ServiceLayer {
     
     static let shared = ServiceLayer()
     
-    let audioService: AudioServiceProtocol
-    let fileService: FileServiceProtocol
     let requestService: RequestSenderProtocol
     let authService: AuthServiceProtocol
+    let moneyService: MoneyServiceProtocol
+    
+    let audioService: AudioServiceProtocol
+    let fileService: FileServiceProtocol
     let contactsService: ContactsServiceProtocol
     
     private init() {
         requestService = RequestSender()
         
         authService = AuthService(requestSender: requestService)
+        moneyService = MoneyService(requestSender: requestService)
         
         audioService = AudioService()
         fileService = FileService()

@@ -15,8 +15,8 @@ final class ContactsAssembly {
         self.rootAssembly = rootAssembly
     }
     
-    func contactsViewController() -> ContactsViewController {
-        let model = ContactsPresentationModel()
+    func contactsViewController(contacts: [ContactViewModel] = []) -> ContactsViewController {
+        let model = ContactsPresentationModel(contacts: contacts)
         let viewController = ContactsViewController(rootAssembly: rootAssembly, model: model)
         return viewController
     }

@@ -17,6 +17,8 @@ final class ContactsViewController: UIViewController {
     var rootAssembly: RootAssembly!
     var model: ContactsPresentationModel!
     
+    var isNotNewDistribution = false
+    
     init(rootAssembly: RootAssembly, model: ContactsPresentationModel) {
         self.model = model
         self.rootAssembly = rootAssembly
@@ -88,7 +90,11 @@ final class ContactsViewController: UIViewController {
         if model.choosenContacts.count == 0 {
             showError("Выберите хотя бы один номер")
         } else {
-            showAlert()
+            if isNotNewDistribution {
+                showMessageScreen()
+            } else {
+                showAlert()
+            }
         }
     }
     
@@ -98,21 +104,24 @@ final class ContactsViewController: UIViewController {
         alert.addTextField(configurationHandler: nil)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert, weak self] (_) in
-            guard let textField = alert?.textFields?[0], !(textField.text?.isEmpty ?? true) else { return }
-            self?.showMessageScreen(title: textField.text ?? "")
+            guard let textField = alert?.textFields?[0], !(textField.text?.isEmpty ?? true) else {
+                self?.showError("Вы не ввели название")
+                return
+            }
+            if let flag = self?.model.saveDistribution(title: textField.text ?? ""), flag == true {
+                
+            } else {
+                self?.showError("Рассылка с таким именем уже существует")
+            }
         }))
         
         self.present(alert, animated: true, completion: nil)
     }
     
-    func showMessageScreen(title: String) {
-        if model.saveDistribution(title: title) {
-            let message = MessageViewModel(contacts: model.choosenContacts)
-            let viewcontroller = rootAssembly.sendAssembly.sendViewController(message: message)
-            navigationController?.pushViewController(viewcontroller, animated: true)
-        } else {
-            showError("Рассылка с таким именем уже существует")
-        }
+    func showMessageScreen() {
+        let message = MessageViewModel(contacts: model.choosenContacts)
+        let viewcontroller = rootAssembly.sendAssembly.sendViewController(message: message)
+        navigationController?.pushViewController(viewcontroller, animated: true)
     }
     
 }

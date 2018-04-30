@@ -80,6 +80,7 @@ final class RecordingViewController: UIViewController {
     }
     
     @IBAction func dismissViewController(_ sender: UIButton) {
+        model.deleteRecord()
         timer.invalidate()
         dismiss(animated: true, completion: nil)
     }
@@ -148,6 +149,11 @@ final class RecordingViewController: UIViewController {
             self.deleteButton.alpha = 0.0
         }
     }
+    
+    @IBAction func confirmTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension RecordingViewController: RecordingPresentationModelDelegate {

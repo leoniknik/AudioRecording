@@ -1,0 +1,37 @@
+//
+//  MoneyService.swift
+//  AudioRecording
+//
+//  Created by Кирилл Володин on 30.04.2018.
+//  Copyright © 2018 Кирилл Володин. All rights reserved.
+//
+
+import Foundation
+
+class MoneyService: MoneyServiceProtocol {
+    
+    private let requestSender: RequestSenderProtocol
+    
+    init(requestSender: RequestSenderProtocol) {
+        self.requestSender = requestSender
+    }
+    
+    func getBalance(completion: BalanceCompletion) {
+        let request = BalanceRequest()
+        requestSender.request(config: request) { (result) in
+            DispatchQueue.main.async {
+                completion?(result)
+            }
+        }
+    }
+    
+    func getCost(numbers: [String], duration: Int, completion: CostCompletion) {
+        let request = CostRequest(numbers: numbers, duration: duration)
+        requestSender.request(config: request) { (result) in
+            DispatchQueue.main.async {
+                completion?(result)
+            }
+        }
+    }
+    
+}

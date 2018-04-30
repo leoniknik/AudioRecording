@@ -11,10 +11,11 @@ import Foundation
 final class ContactViewModel {
     var name: String
     var number: String
-    var isChoosen: Bool = false
+    var isChoosen: Bool
     
-    init(name: String, number: String) {
+    init(name: String, number: String, isChoosen: Bool = false) {
         self.name = name
         self.number = number
+        self.isChoosen = isChoosen
     }
 }

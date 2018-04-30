@@ -11,11 +11,12 @@ import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     private let rootAssembly = RootAssembly()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        configRecordsDirectory()
         configRealm()
         setupTabBar()
         openInitialViewController()
@@ -32,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
-
+    
     private func setupTabBar() {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.ccBlue], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.ccBlue], for: .normal)
@@ -47,7 +48,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         Realm.Configuration.defaultConfiguration = config
     }
+    
+    private func configRecordsDirectory() {
+        let fileManager = FileManager.default
+        guard let path = Constants.recordsPath?.path else { return }
+        if !fileManager.fileExists(atPath: path) {
+            do {
+                try fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+            }
+        }
+    }
 }
-
-
-

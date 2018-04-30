@@ -18,6 +18,7 @@ final class DistributionAssembly {
     func distributionViewController() -> DistributionViewController {
         let model = DistributionPresentationModel()
         let viewController = DistributionViewController(rootAssembly: rootAssembly, model: model)
+        model.delegate = viewController
         return viewController
     }
 }

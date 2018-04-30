@@ -39,10 +39,23 @@ class LoginViewController: UIViewController {
         validateForm()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        loginTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
     func setupUI() {
         setupFormView()
         setupTextFields()
         setupButton()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gesture)
+    }
+    
+    @objc func hideKeyboard() {
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
     }
     
     func setupFormView() {

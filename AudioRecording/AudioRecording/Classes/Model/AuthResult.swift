@@ -8,14 +8,10 @@
 
 import Foundation
 
-class AuthResult: Decodable {
+class AuthResult {
     var isLogined: Bool = false
     
     init(isLogined: Bool) {
         self.isLogined = isLogined
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case isLogined = ""
     }
 }

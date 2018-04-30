@@ -32,7 +32,7 @@ extension LoginViewController {
         
         //profile screen
         let profileNC = setupDefaultNavController()
-        let profileVC = UIViewController()
+        let profileVC = rootAssembly.profileAssembly.profileViewController()
         profileNC.viewControllers.append(profileVC)
         tabBarController.viewControllers?.append(profileNC)
         

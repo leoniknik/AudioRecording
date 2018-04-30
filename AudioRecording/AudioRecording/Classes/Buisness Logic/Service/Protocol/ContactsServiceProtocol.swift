@@ -11,7 +11,7 @@ import Contacts
 
 protocol ContactsServiceProtocol {
     
-    typealias ContactsCompletion = ((Result<[CNContact]>) -> Void)?
+    typealias ContactsCompletion = ((Result<[Contact]>) -> Void)?
     
     func obtainContacts(completion: ContactsCompletion)
 }

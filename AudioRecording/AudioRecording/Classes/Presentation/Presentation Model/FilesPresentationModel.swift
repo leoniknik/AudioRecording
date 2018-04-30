@@ -24,9 +24,9 @@ final class FilesPresentationModel: PresentationModel {
     func obtainAudioRecords() {
         state = .loading
         let fileManager = FileManager.default
-        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        guard let dir = Constants.recordsPath else { return }
         do {
-            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+            let fileURLs = try fileManager.contentsOfDirectory(at: dir, includingPropertiesForKeys: nil)
             audioRecords = fileURLs.map {
                 var player: AVAudioPlayer?
                 do {

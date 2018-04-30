@@ -40,4 +40,9 @@ final class RootAssembly {
         return assembly
     }()
     
+    lazy var profileAssembly: ProfileAssembly = {
+        let assembly = ProfileAssembly(rootAssembly: self)
+        return assembly
+    }()
+    
 }

@@ -25,14 +25,17 @@ class DistributionProvider {
         do {
             let rmDistribution = RMDistribution()
             rmDistribution.title = title
+            try realm.write {
+                realm.add(rmDistribution)
+            }
             for contact in contacts {
                 let rmContact = RMContact()
                 rmContact.name = contact.name
                 rmContact.number = contact.number
                 rmContact.distribution = rmDistribution
-            }
-            try realm.write {
-                realm.add(rmDistribution)
+                try realm.write {
+                    realm.add(rmContact)
+                }
             }
             return true
         } catch {
@@ -60,6 +63,36 @@ class DistributionProvider {
             }
         }
         return false
+    }
+    
+    func deleteDistribution(withTitle title: String) {
+        guard let realm = self.realm else { return }
+        for distribution in realm.objects(RMDistribution.self) {
+            if distribution.title == title {
+                do {
+                    try realm.write {
+                        realm.delete(distribution)
+                    }
+                } catch {
+                    print("unable to delete")
+                }
+            }
+        }
+    }
+    
+    func renameDistribution(fromTitle oldTitle: String, to newTitle: String) {
+        guard let realm = self.realm else { return }
+        for distribution in realm.objects(RMDistribution.self) {
+            if distribution.title == oldTitle {
+                do {
+                    try realm.write {
+                        distribution.title = newTitle
+                    }
+                }
+                catch {
+                }
+            }
+        }
     }
     
 }

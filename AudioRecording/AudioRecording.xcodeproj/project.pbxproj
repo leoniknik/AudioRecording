@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B3917927EE039CFFFBC01C35 /* Pods_AudioRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0866D6EF9F0AEDE782D328D3 /* Pods_AudioRecording.framework */; };
+		CA3819C42096FAA1000B6921 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819C32096FAA1000B6921 /* ProfileAssembly.swift */; };
+		CA3819C620970358000B6921 /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819C520970358000B6921 /* MoneyService.swift */; };
+		CA3819C8209703C7000B6921 /* MoneyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819C7209703C7000B6921 /* MoneyServiceProtocol.swift */; };
+		CA3819CA2097044C000B6921 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819C92097044C000B6921 /* Balance.swift */; };
+		CA3819CC209705F1000B6921 /* BalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819CB209705F1000B6921 /* BalanceRequest.swift */; };
+		CA3819CE2097064F000B6921 /* BalanceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819CD2097064F000B6921 /* BalanceParser.swift */; };
 		CA4652D42064336B0040DD45 /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4652D32064336B0040DD45 /* LoginAssembly.swift */; };
 		CA4652D6206433F80040DD45 /* LoginPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4652D5206433F80040DD45 /* LoginPresentationModel.swift */; };
 		CA4652D820643E500040DD45 /* ModalLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4652D720643E500040DD45 /* ModalLoadingIndicator.swift */; };
@@ -19,6 +25,10 @@
 		CA67D7332094EFA900947D30 /* RMContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D7322094EFA900947D30 /* RMContact.swift */; };
 		CA67D73520950B9300947D30 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D73420950B9300947D30 /* Distribution.swift */; };
 		CA67D73720950BE300947D30 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D73620950BE300947D30 /* Contact.swift */; };
+		CA67D7392095158C00947D30 /* DistributionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D7382095158C00947D30 /* DistributionViewModel.swift */; };
+		CA67D73D2095170D00947D30 /* DistributionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D73B2095170D00947D30 /* DistributionCell.swift */; };
+		CA67D73E2095170D00947D30 /* DistributionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA67D73C2095170D00947D30 /* DistributionCell.xib */; };
+		CA67D7402095C00700947D30 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA67D73F2095C00700947D30 /* Constants.swift */; };
 		CA6EF6752094713600A0D059 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6EF6742094713600A0D059 /* Parser.swift */; };
 		CA7DA41D208DD30300A2222B /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7DA41B208DD30300A2222B /* KeyboardViewController.swift */; };
 		CA7DA41E208DD30300A2222B /* KeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7DA41C208DD30300A2222B /* KeyboardViewController.xib */; };
@@ -57,6 +67,9 @@
 		CAABFA062094968C00886D90 /* SendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAABFA042094968C00886D90 /* SendViewController.xib */; };
 		CAABFA08209496CD00886D90 /* SendPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABFA07209496CD00886D90 /* SendPresentationModel.swift */; };
 		CAABFA0A209496F600886D90 /* SendAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABFA09209496F600886D90 /* SendAssembly.swift */; };
+		CAAD813D2095CA83003FB9E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD813B2095CA83003FB9E0 /* ProfileViewController.swift */; };
+		CAAD813E2095CA83003FB9E0 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAAD813C2095CA83003FB9E0 /* ProfileViewController.xib */; };
+		CAAD81402096FA52003FB9E0 /* ProfilePresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD813F2096FA52003FB9E0 /* ProfilePresentationModel.swift */; };
 		CABB93BC208CBE5F00D699A9 /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BB208CBE5F00D699A9 /* RequestSender.swift */; };
 		CABB93BE208CBFAA00D699A9 /* RequestSenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BD208CBFAA00D699A9 /* RequestSenderProtocol.swift */; };
 		CABB93C0208CC04B00D699A9 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BF208CC04B00D699A9 /* AuthServiceProtocol.swift */; };
@@ -69,6 +82,9 @@
 		CABB93CE208CD43B00D699A9 /* DistributionPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93CD208CD43B00D699A9 /* DistributionPresentationModel.swift */; };
 		CABB93D1208CE9DF00D699A9 /* DistributionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93D0208CE9DF00D699A9 /* DistributionFooterView.swift */; };
 		CABB93D3208CE9F700D699A9 /* DistributionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB93D2208CE9F700D699A9 /* DistributionFooterView.xib */; };
+		CACC434B2097D89500834AAD /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC434A2097D89500834AAD /* Cost.swift */; };
+		CACC434D2097DC7300834AAD /* CostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC434C2097DC7300834AAD /* CostRequest.swift */; };
+		CACC434F2097DCE500834AAD /* CostParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC434E2097DCE500834AAD /* CostParser.swift */; };
 		CAD718772052FBBB007D5239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD718762052FBBB007D5239 /* AppDelegate.swift */; };
 		CAD7187E2052FBBC007D5239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD7187D2052FBBC007D5239 /* Assets.xcassets */; };
 		CAD718812052FBBC007D5239 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD7187F2052FBBC007D5239 /* LaunchScreen.storyboard */; };
@@ -86,6 +102,12 @@
 /* Begin PBXFileReference section */
 		0866D6EF9F0AEDE782D328D3 /* Pods_AudioRecording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioRecording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76ADB92C391E1855EC1306A2 /* Pods-AudioRecording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioRecording.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioRecording/Pods-AudioRecording.debug.xcconfig"; sourceTree = "<group>"; };
+		CA3819C32096FAA1000B6921 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		CA3819C520970358000B6921 /* MoneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyService.swift; sourceTree = "<group>"; };
+		CA3819C7209703C7000B6921 /* MoneyServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyServiceProtocol.swift; sourceTree = "<group>"; };
+		CA3819C92097044C000B6921 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		CA3819CB209705F1000B6921 /* BalanceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRequest.swift; sourceTree = "<group>"; };
+		CA3819CD2097064F000B6921 /* BalanceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceParser.swift; sourceTree = "<group>"; };
 		CA4652D32064336B0040DD45 /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		CA4652D5206433F80040DD45 /* LoginPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationModel.swift; sourceTree = "<group>"; };
 		CA4652D720643E500040DD45 /* ModalLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLoadingIndicator.swift; sourceTree = "<group>"; };
@@ -97,6 +119,10 @@
 		CA67D7322094EFA900947D30 /* RMContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMContact.swift; sourceTree = "<group>"; };
 		CA67D73420950B9300947D30 /* Distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
 		CA67D73620950BE300947D30 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		CA67D7382095158C00947D30 /* DistributionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionViewModel.swift; sourceTree = "<group>"; };
+		CA67D73B2095170D00947D30 /* DistributionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionCell.swift; sourceTree = "<group>"; };
+		CA67D73C2095170D00947D30 /* DistributionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistributionCell.xib; sourceTree = "<group>"; };
+		CA67D73F2095C00700947D30 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CA6EF6742094713600A0D059 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		CA7DA41B208DD30300A2222B /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		CA7DA41C208DD30300A2222B /* KeyboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardViewController.xib; sourceTree = "<group>"; };
@@ -135,6 +161,9 @@
 		CAABFA042094968C00886D90 /* SendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendViewController.xib; sourceTree = "<group>"; };
 		CAABFA07209496CD00886D90 /* SendPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPresentationModel.swift; sourceTree = "<group>"; };
 		CAABFA09209496F600886D90 /* SendAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAssembly.swift; sourceTree = "<group>"; };
+		CAAD813B2095CA83003FB9E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CAAD813C2095CA83003FB9E0 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		CAAD813F2096FA52003FB9E0 /* ProfilePresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresentationModel.swift; sourceTree = "<group>"; };
 		CABB93BB208CBE5F00D699A9 /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
 		CABB93BD208CBFAA00D699A9 /* RequestSenderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSenderProtocol.swift; sourceTree = "<group>"; };
 		CABB93BF208CC04B00D699A9 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
@@ -147,6 +176,9 @@
 		CABB93CD208CD43B00D699A9 /* DistributionPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionPresentationModel.swift; sourceTree = "<group>"; };
 		CABB93D0208CE9DF00D699A9 /* DistributionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributionFooterView.swift; sourceTree = "<group>"; };
 		CABB93D2208CE9F700D699A9 /* DistributionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistributionFooterView.xib; sourceTree = "<group>"; };
+		CACC434A2097D89500834AAD /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
+		CACC434C2097DC7300834AAD /* CostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostRequest.swift; sourceTree = "<group>"; };
+		CACC434E2097DCE500834AAD /* CostParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostParser.swift; sourceTree = "<group>"; };
 		CAD718732052FBBB007D5239 /* AudioRecording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecording.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAD718762052FBBB007D5239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAD7187D2052FBBC007D5239 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +222,8 @@
 			children = (
 				CA4652DD206442950040DD45 /* RequestConfig.swift */,
 				CABB93C5208CC26900D699A9 /* AuthUserRequest.swift */,
+				CA3819CB209705F1000B6921 /* BalanceRequest.swift */,
+				CACC434C2097DC7300834AAD /* CostRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -203,11 +237,22 @@
 			path = NumberCell;
 			sourceTree = "<group>";
 		};
+		CA67D73A209516F300947D30 /* DistributionCell */ = {
+			isa = PBXGroup;
+			children = (
+				CA67D73B2095170D00947D30 /* DistributionCell.swift */,
+				CA67D73C2095170D00947D30 /* DistributionCell.xib */,
+			);
+			path = DistributionCell;
+			sourceTree = "<group>";
+		};
 		CA6EF6732094712400A0D059 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
 				CA6EF6742094713600A0D059 /* Parser.swift */,
 				CAABFA0120947D3900886D90 /* AuthUserParser.swift */,
+				CA3819CD2097064F000B6921 /* BalanceParser.swift */,
+				CACC434E2097DCE500834AAD /* CostParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -247,6 +292,7 @@
 				CABB93BB208CBE5F00D699A9 /* RequestSender.swift */,
 				CABB93C3208CC18700D699A9 /* AuthService.swift */,
 				CA7DB188208DC572000F54A0 /* ContactsService.swift */,
+				CA3819C520970358000B6921 /* MoneyService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -259,6 +305,7 @@
 				CABB93BD208CBFAA00D699A9 /* RequestSenderProtocol.swift */,
 				CABB93BF208CC04B00D699A9 /* AuthServiceProtocol.swift */,
 				CA7DB186208DC551000F54A0 /* ContactsServiceProtocol.swift */,
+				CA3819C7209703C7000B6921 /* MoneyServiceProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -362,6 +409,8 @@
 				CABB93C1208CC12400D699A9 /* AuthResult.swift */,
 				CA67D73420950B9300947D30 /* Distribution.swift */,
 				CA67D73620950BE300947D30 /* Contact.swift */,
+				CA3819C92097044C000B6921 /* Balance.swift */,
+				CACC434A2097D89500834AAD /* Cost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,6 +420,7 @@
 			children = (
 				CAD7189A20530AAE007D5239 /* RootAssembly.swift */,
 				CAD7189F20530BEC007D5239 /* PresentationModel.swift */,
+				CA67D73F2095C00700947D30 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -387,6 +437,7 @@
 		CAD7189420530A3E007D5239 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CAAD813B2095CA83003FB9E0 /* ProfileViewController.swift */,
 				CAABFA032094968C00886D90 /* SendViewController.swift */,
 				CA7DA41B208DD30300A2222B /* KeyboardViewController.swift */,
 				CA7DB175208D2B4C000F54A0 /* ContactsViewController.swift */,
@@ -407,6 +458,7 @@
 				CABB93CD208CD43B00D699A9 /* DistributionPresentationModel.swift */,
 				CA7DB17E208DB4A8000F54A0 /* ContactsPresentationModel.swift */,
 				CAABFA07209496CD00886D90 /* SendPresentationModel.swift */,
+				CAAD813F2096FA52003FB9E0 /* ProfilePresentationModel.swift */,
 			);
 			path = "Presentation Model";
 			sourceTree = "<group>";
@@ -417,6 +469,7 @@
 				CA67D7302094DC9100947D30 /* MessageViewModel.swift */,
 				CA871C8B205E6EF0009BDDB0 /* RecordViewModel.swift */,
 				CA7DB184208DC122000F54A0 /* ContactViewModel.swift */,
+				CA67D7382095158C00947D30 /* DistributionViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -442,6 +495,7 @@
 				CABB93C7208CD35D00D699A9 /* DistributionAssembly.swift */,
 				CA7DB180208DB4D1000F54A0 /* ContactsAssembly.swift */,
 				CAABFA09209496F600886D90 /* SendAssembly.swift */,
+				CA3819C32096FAA1000B6921 /* ProfileAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -469,6 +523,7 @@
 				CA7DB176208D2B4C000F54A0 /* ContactsViewController.xib */,
 				CA7DA41C208DD30300A2222B /* KeyboardViewController.xib */,
 				CAABFA042094968C00886D90 /* SendViewController.xib */,
+				CAAD813C2095CA83003FB9E0 /* ProfileViewController.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -476,6 +531,7 @@
 		CAD718A520534A8C007D5239 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CA67D73A209516F300947D30 /* DistributionCell */,
 				CA67D72B2094D3AB00947D30 /* NumberCell */,
 				CA7DB179208DB0D0000F54A0 /* ContactCell */,
 				CAD718A620534AA7007D5239 /* AudioRecordCell */,
@@ -564,6 +620,7 @@
 			files = (
 				CAD718812052FBBC007D5239 /* LaunchScreen.storyboard in Resources */,
 				CAD718AA20534B2F007D5239 /* AudioRecordCell.xib in Resources */,
+				CA67D73E2095170D00947D30 /* DistributionCell.xib in Resources */,
 				CA7DB174208D1849000F54A0 /* Tabbar.xcassets in Resources */,
 				CA7DA41E208DD30300A2222B /* KeyboardViewController.xib in Resources */,
 				CAA9566720642C45003F4742 /* LoginViewController.xib in Resources */,
@@ -571,6 +628,7 @@
 				CABB93CC208CD3D600D699A9 /* DistributionViewController.xib in Resources */,
 				CABB93D3208CE9F700D699A9 /* DistributionFooterView.xib in Resources */,
 				CAD7189320530A32007D5239 /* FilesViewController.xib in Resources */,
+				CAAD813E2095CA83003FB9E0 /* ProfileViewController.xib in Resources */,
 				CAABFA062094968C00886D90 /* SendViewController.xib in Resources */,
 				CA67D72F2094D3C500947D30 /* NumberCell.xib in Resources */,
 				CA7DB17D208DB0E9000F54A0 /* ContactCell.xib in Resources */,
@@ -623,6 +681,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AudioRecording/Pods-AudioRecording-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BGTableViewRowActionWithImage/BGTableViewRowActionWithImage.framework",
 				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/InputMask/InputMask.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -634,6 +693,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BGTableViewRowActionWithImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputMask.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -660,6 +720,7 @@
 				CABB93C4208CC18700D699A9 /* AuthService.swift in Sources */,
 				CABB93C8208CD35D00D699A9 /* DistributionAssembly.swift in Sources */,
 				CA871C96205E7616009BDDB0 /* AudioServiceProtocol.swift in Sources */,
+				CAAD81402096FA52003FB9E0 /* ProfilePresentationModel.swift in Sources */,
 				CAD718A020530BEC007D5239 /* PresentationModel.swift in Sources */,
 				CAD718A420530E2B007D5239 /* FilesAssembly.swift in Sources */,
 				CAABFA0A209496F600886D90 /* SendAssembly.swift in Sources */,
@@ -670,12 +731,18 @@
 				CABB93CE208CD43B00D699A9 /* DistributionPresentationModel.swift in Sources */,
 				CA871C98205E764B009BDDB0 /* AudioService.swift in Sources */,
 				CA7DB17C208DB0E9000F54A0 /* ContactCell.swift in Sources */,
+				CACC434B2097D89500834AAD /* Cost.swift in Sources */,
 				CABB93C6208CC26900D699A9 /* AuthUserRequest.swift in Sources */,
 				CA871C9C205E828F009BDDB0 /* FileServiceProtocol.swift in Sources */,
+				CA67D7392095158C00947D30 /* DistributionViewModel.swift in Sources */,
+				CA3819C42096FAA1000B6921 /* ProfileAssembly.swift in Sources */,
+				CACC434D2097DC7300834AAD /* CostRequest.swift in Sources */,
+				CA67D7402095C00700947D30 /* Constants.swift in Sources */,
 				CA4652DA20643FB00040DD45 /* UIViewController+ShowError.swift in Sources */,
 				CA67D7312094DC9100947D30 /* MessageViewModel.swift in Sources */,
 				CA7DB177208D2B4C000F54A0 /* ContactsViewController.swift in Sources */,
 				CA871C92205E75AA009BDDB0 /* ServiceLayer.swift in Sources */,
+				CA67D73D2095170D00947D30 /* DistributionCell.swift in Sources */,
 				CA7DA41D208DD30300A2222B /* KeyboardViewController.swift in Sources */,
 				CAD718A920534B2F007D5239 /* AudioRecordCell.swift in Sources */,
 				CA871C8E205E728F009BDDB0 /* FilesViewController+BubbleAnimationDelegate.swift in Sources */,
@@ -687,7 +754,10 @@
 				CA7DB171208CFF15000F54A0 /* UIViewController+SetupDefaultNavController.swift in Sources */,
 				CA7DB185208DC122000F54A0 /* ContactViewModel.swift in Sources */,
 				CA7DB183208DB80A000F54A0 /* UIViewController+BackButton.swift in Sources */,
+				CACC434F2097DCE500834AAD /* CostParser.swift in Sources */,
+				CA3819CC209705F1000B6921 /* BalanceRequest.swift in Sources */,
 				CAD7189E20530B92007D5239 /* FilesPresentationModel.swift in Sources */,
+				CA3819CA2097044C000B6921 /* Balance.swift in Sources */,
 				CA871C90205E7576009BDDB0 /* RecordingPresentationModel.swift in Sources */,
 				CA871CA0205E96FF009BDDB0 /* WaveView.swift in Sources */,
 				CA4652DE206442950040DD45 /* RequestConfig.swift in Sources */,
@@ -703,16 +773,20 @@
 				CABB93D1208CE9DF00D699A9 /* DistributionFooterView.swift in Sources */,
 				CA67D72E2094D3C500947D30 /* NumberCell.swift in Sources */,
 				CA7DB16F208CFE52000F54A0 /* LoginViewController+UITabbarController.swift in Sources */,
+				CA3819C620970358000B6921 /* MoneyService.swift in Sources */,
 				CABB93CB208CD3D600D699A9 /* DistributionViewController.swift in Sources */,
 				CA6EF6752094713600A0D059 /* Parser.swift in Sources */,
+				CA3819C8209703C7000B6921 /* MoneyServiceProtocol.swift in Sources */,
 				CA7DB16D208CF448000F54A0 /* DistributionProvider.swift in Sources */,
 				CABB93BC208CBE5F00D699A9 /* RequestSender.swift in Sources */,
 				CA7DB187208DC551000F54A0 /* ContactsServiceProtocol.swift in Sources */,
 				CABB93C2208CC12400D699A9 /* AuthResult.swift in Sources */,
 				CA67D73720950BE300947D30 /* Contact.swift in Sources */,
 				CA871C9E205E829A009BDDB0 /* FileService.swift in Sources */,
+				CAAD813D2095CA83003FB9E0 /* ProfileViewController.swift in Sources */,
 				CA4652D6206433F80040DD45 /* LoginPresentationModel.swift in Sources */,
 				CA4652D42064336B0040DD45 /* LoginAssembly.swift in Sources */,
+				CA3819CE2097064F000B6921 /* BalanceParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
