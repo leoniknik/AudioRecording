@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let rootAssembly = RootAssembly()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+//        let rs = RequestSender()
+//        rs.upload()
+        
         configRecordsDirectory()
         configRealm()
         setupTabBar()
@@ -52,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configRecordsDirectory() {
         let fileManager = FileManager.default
         guard let path = Constants.recordsPath?.path else { return }
+        print(path)
         if !fileManager.fileExists(atPath: path) {
             do {
                 try fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)

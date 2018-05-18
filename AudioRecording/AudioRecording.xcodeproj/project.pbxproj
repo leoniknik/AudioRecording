@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B3917927EE039CFFFBC01C35 /* Pods_AudioRecording.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0866D6EF9F0AEDE782D328D3 /* Pods_AudioRecording.framework */; };
+		CA004917209D04C000A91692 /* String+FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA004916209D04C000A91692 /* String+FileExtension.swift */; };
+		CA340A0520990B2E004B11E5 /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA340A0420990B2E004B11E5 /* LogoutResult.swift */; };
+		CA340A0720990B7B004B11E5 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA340A0620990B7B004B11E5 /* LogoutRequest.swift */; };
+		CA340A0920990BC4004B11E5 /* LogoutParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA340A0820990BC4004B11E5 /* LogoutParser.swift */; };
 		CA3819C42096FAA1000B6921 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819C32096FAA1000B6921 /* ProfileAssembly.swift */; };
 		CA3819C620970358000B6921 /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819C520970358000B6921 /* MoneyService.swift */; };
 		CA3819C8209703C7000B6921 /* MoneyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3819C7209703C7000B6921 /* MoneyServiceProtocol.swift */; };
@@ -70,6 +74,10 @@
 		CAAD813D2095CA83003FB9E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD813B2095CA83003FB9E0 /* ProfileViewController.swift */; };
 		CAAD813E2095CA83003FB9E0 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAAD813C2095CA83003FB9E0 /* ProfileViewController.xib */; };
 		CAAD81402096FA52003FB9E0 /* ProfilePresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD813F2096FA52003FB9E0 /* ProfilePresentationModel.swift */; };
+		CABA3F76209E6340007E49B4 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABA3F74209E6340007E49B4 /* StatusViewController.swift */; };
+		CABA3F77209E6340007E49B4 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABA3F75209E6340007E49B4 /* StatusViewController.xib */; };
+		CABA3F7B209E63D9007E49B4 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABA3F79209E63D9007E49B4 /* StatusCell.swift */; };
+		CABA3F7C209E63D9007E49B4 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABA3F7A209E63D9007E49B4 /* StatusCell.xib */; };
 		CABB93BC208CBE5F00D699A9 /* RequestSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BB208CBE5F00D699A9 /* RequestSender.swift */; };
 		CABB93BE208CBFAA00D699A9 /* RequestSenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BD208CBFAA00D699A9 /* RequestSenderProtocol.swift */; };
 		CABB93C0208CC04B00D699A9 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB93BF208CC04B00D699A9 /* AuthServiceProtocol.swift */; };
@@ -102,6 +110,10 @@
 /* Begin PBXFileReference section */
 		0866D6EF9F0AEDE782D328D3 /* Pods_AudioRecording.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioRecording.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76ADB92C391E1855EC1306A2 /* Pods-AudioRecording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioRecording.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioRecording/Pods-AudioRecording.debug.xcconfig"; sourceTree = "<group>"; };
+		CA004916209D04C000A91692 /* String+FileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FileExtension.swift"; sourceTree = "<group>"; };
+		CA340A0420990B2E004B11E5 /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
+		CA340A0620990B7B004B11E5 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		CA340A0820990BC4004B11E5 /* LogoutParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutParser.swift; sourceTree = "<group>"; };
 		CA3819C32096FAA1000B6921 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		CA3819C520970358000B6921 /* MoneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyService.swift; sourceTree = "<group>"; };
 		CA3819C7209703C7000B6921 /* MoneyServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyServiceProtocol.swift; sourceTree = "<group>"; };
@@ -164,6 +176,10 @@
 		CAAD813B2095CA83003FB9E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CAAD813C2095CA83003FB9E0 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		CAAD813F2096FA52003FB9E0 /* ProfilePresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresentationModel.swift; sourceTree = "<group>"; };
+		CABA3F74209E6340007E49B4 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		CABA3F75209E6340007E49B4 /* StatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
+		CABA3F79209E63D9007E49B4 /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		CABA3F7A209E63D9007E49B4 /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
 		CABB93BB208CBE5F00D699A9 /* RequestSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSender.swift; sourceTree = "<group>"; };
 		CABB93BD208CBFAA00D699A9 /* RequestSenderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSenderProtocol.swift; sourceTree = "<group>"; };
 		CABB93BF208CC04B00D699A9 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
@@ -224,6 +240,7 @@
 				CABB93C5208CC26900D699A9 /* AuthUserRequest.swift */,
 				CA3819CB209705F1000B6921 /* BalanceRequest.swift */,
 				CACC434C2097DC7300834AAD /* CostRequest.swift */,
+				CA340A0620990B7B004B11E5 /* LogoutRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -253,6 +270,7 @@
 				CAABFA0120947D3900886D90 /* AuthUserParser.swift */,
 				CA3819CD2097064F000B6921 /* BalanceParser.swift */,
 				CACC434E2097DCE500834AAD /* CostParser.swift */,
+				CA340A0820990BC4004B11E5 /* LogoutParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -308,6 +326,15 @@
 				CA3819C7209703C7000B6921 /* MoneyServiceProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CABA3F78209E63BE007E49B4 /* StatusCell */ = {
+			isa = PBXGroup;
+			children = (
+				CABA3F79209E63D9007E49B4 /* StatusCell.swift */,
+				CABA3F7A209E63D9007E49B4 /* StatusCell.xib */,
+			);
+			path = StatusCell;
 			sourceTree = "<group>";
 		};
 		CABB93CF208CE9A700D699A9 /* Footer */ = {
@@ -411,6 +438,7 @@
 				CA67D73620950BE300947D30 /* Contact.swift */,
 				CA3819C92097044C000B6921 /* Balance.swift */,
 				CACC434A2097D89500834AAD /* Cost.swift */,
+				CA340A0420990B2E004B11E5 /* LogoutResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,6 +465,7 @@
 		CAD7189420530A3E007D5239 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CABA3F74209E6340007E49B4 /* StatusViewController.swift */,
 				CAAD813B2095CA83003FB9E0 /* ProfileViewController.swift */,
 				CAABFA032094968C00886D90 /* SendViewController.swift */,
 				CA7DA41B208DD30300A2222B /* KeyboardViewController.swift */,
@@ -510,6 +539,7 @@
 				CA7DB16E208CFE52000F54A0 /* LoginViewController+UITabbarController.swift */,
 				CA7DB170208CFF15000F54A0 /* UIViewController+SetupDefaultNavController.swift */,
 				CA7DB182208DB80A000F54A0 /* UIViewController+BackButton.swift */,
+				CA004916209D04C000A91692 /* String+FileExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -524,6 +554,7 @@
 				CA7DA41C208DD30300A2222B /* KeyboardViewController.xib */,
 				CAABFA042094968C00886D90 /* SendViewController.xib */,
 				CAAD813C2095CA83003FB9E0 /* ProfileViewController.xib */,
+				CABA3F75209E6340007E49B4 /* StatusViewController.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -531,6 +562,7 @@
 		CAD718A520534A8C007D5239 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CABA3F78209E63BE007E49B4 /* StatusCell */,
 				CA67D73A209516F300947D30 /* DistributionCell */,
 				CA67D72B2094D3AB00947D30 /* NumberCell */,
 				CA7DB179208DB0D0000F54A0 /* ContactCell */,
@@ -621,6 +653,7 @@
 				CAD718812052FBBC007D5239 /* LaunchScreen.storyboard in Resources */,
 				CAD718AA20534B2F007D5239 /* AudioRecordCell.xib in Resources */,
 				CA67D73E2095170D00947D30 /* DistributionCell.xib in Resources */,
+				CABA3F77209E6340007E49B4 /* StatusViewController.xib in Resources */,
 				CA7DB174208D1849000F54A0 /* Tabbar.xcassets in Resources */,
 				CA7DA41E208DD30300A2222B /* KeyboardViewController.xib in Resources */,
 				CAA9566720642C45003F4742 /* LoginViewController.xib in Resources */,
@@ -630,6 +663,7 @@
 				CAD7189320530A32007D5239 /* FilesViewController.xib in Resources */,
 				CAAD813E2095CA83003FB9E0 /* ProfileViewController.xib in Resources */,
 				CAABFA062094968C00886D90 /* SendViewController.xib in Resources */,
+				CABA3F7C209E63D9007E49B4 /* StatusCell.xib in Resources */,
 				CA67D72F2094D3C500947D30 /* NumberCell.xib in Resources */,
 				CA7DB17D208DB0E9000F54A0 /* ContactCell.xib in Resources */,
 				CA876BED20540048003E81DC /* Storyboard.storyboard in Resources */,
@@ -739,6 +773,7 @@
 				CACC434D2097DC7300834AAD /* CostRequest.swift in Sources */,
 				CA67D7402095C00700947D30 /* Constants.swift in Sources */,
 				CA4652DA20643FB00040DD45 /* UIViewController+ShowError.swift in Sources */,
+				CA340A0720990B7B004B11E5 /* LogoutRequest.swift in Sources */,
 				CA67D7312094DC9100947D30 /* MessageViewModel.swift in Sources */,
 				CA7DB177208D2B4C000F54A0 /* ContactsViewController.swift in Sources */,
 				CA871C92205E75AA009BDDB0 /* ServiceLayer.swift in Sources */,
@@ -753,7 +788,9 @@
 				CAD718772052FBBB007D5239 /* AppDelegate.swift in Sources */,
 				CA7DB171208CFF15000F54A0 /* UIViewController+SetupDefaultNavController.swift in Sources */,
 				CA7DB185208DC122000F54A0 /* ContactViewModel.swift in Sources */,
+				CA004917209D04C000A91692 /* String+FileExtension.swift in Sources */,
 				CA7DB183208DB80A000F54A0 /* UIViewController+BackButton.swift in Sources */,
+				CABA3F7B209E63D9007E49B4 /* StatusCell.swift in Sources */,
 				CACC434F2097DCE500834AAD /* CostParser.swift in Sources */,
 				CA3819CC209705F1000B6921 /* BalanceRequest.swift in Sources */,
 				CAD7189E20530B92007D5239 /* FilesPresentationModel.swift in Sources */,
@@ -768,7 +805,9 @@
 				CA67D73520950B9300947D30 /* Distribution.swift in Sources */,
 				CADA9C89205434430031433B /* UIColors.swift in Sources */,
 				CABB93C0208CC04B00D699A9 /* AuthServiceProtocol.swift in Sources */,
+				CA340A0520990B2E004B11E5 /* LogoutResult.swift in Sources */,
 				CA871CA2205EFDE1009BDDB0 /* String+Time.swift in Sources */,
+				CABA3F76209E6340007E49B4 /* StatusViewController.swift in Sources */,
 				CA871C9A205E7DF1009BDDB0 /* RecordingAssembly.swift in Sources */,
 				CABB93D1208CE9DF00D699A9 /* DistributionFooterView.swift in Sources */,
 				CA67D72E2094D3C500947D30 /* NumberCell.swift in Sources */,
@@ -780,6 +819,7 @@
 				CA7DB16D208CF448000F54A0 /* DistributionProvider.swift in Sources */,
 				CABB93BC208CBE5F00D699A9 /* RequestSender.swift in Sources */,
 				CA7DB187208DC551000F54A0 /* ContactsServiceProtocol.swift in Sources */,
+				CA340A0920990BC4004B11E5 /* LogoutParser.swift in Sources */,
 				CABB93C2208CC12400D699A9 /* AuthResult.swift in Sources */,
 				CA67D73720950BE300947D30 /* Contact.swift in Sources */,
 				CA871C9E205E829A009BDDB0 /* FileService.swift in Sources */,

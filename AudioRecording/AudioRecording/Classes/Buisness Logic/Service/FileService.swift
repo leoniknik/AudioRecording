@@ -34,7 +34,7 @@ final class FileService: FileServiceProtocol {
     private var recordTitle: String {
         let defaults = UserDefaults()
         var number = defaults.integer(forKey: "number")
-        let recordTitle = "Запись \(number)"
+        let recordTitle = "Запись \(number).wav"
         number += 1
         defaults.set(number, forKey: "number")
         return recordTitle

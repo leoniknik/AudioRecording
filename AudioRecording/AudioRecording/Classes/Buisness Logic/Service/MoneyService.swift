@@ -26,12 +26,25 @@ class MoneyService: MoneyServiceProtocol {
     }
     
     func getCost(numbers: [String], duration: Int, completion: CostCompletion) {
-        let request = CostRequest(numbers: numbers, duration: duration)
+        let numbersParam = filterNumbers(numbers: numbers)
+        let request = CostRequest(numbers: numbersParam, duration: duration)
         requestSender.request(config: request) { (result) in
             DispatchQueue.main.async {
                 completion?(result)
             }
         }
+    }
+    
+    private func filterNumbers(numbers: [String]) -> String {
+        var result = "\(numbers)"
+        result = result.replacingOccurrences(of: "-", with: "")
+        result = result.replacingOccurrences(of: " ", with: "")
+        result = result.replacingOccurrences(of: "+", with: "")
+        result = result.replacingOccurrences(of: "(", with: "")
+        result = result.replacingOccurrences(of: ")", with: "")
+        result = result.replacingOccurrences(of: "\\", with: "")
+        result = result.replacingOccurrences(of: "\"", with: "")
+        return result
     }
     
 }

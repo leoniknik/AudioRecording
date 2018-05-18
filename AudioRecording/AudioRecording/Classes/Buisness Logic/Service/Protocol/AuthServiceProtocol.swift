@@ -11,6 +11,8 @@ import Foundation
 protocol AuthServiceProtocol {
     
     typealias AuthUserCompletion = ((Result<AuthResult>) -> Void)?
-    
     func authUser(login: String, password: String, completion: AuthUserCompletion)
+    
+    typealias LogoutCompletion = ((Result<LogoutResult>) -> Void)?
+    func logout(completion: LogoutCompletion)
 }

@@ -27,7 +27,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9E-0B-Oxp">
-                    <rect key="frame" x="50" y="713" width="275" height="45"/>
+                    <rect key="frame" x="25" y="713" width="325" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="piL-Se-K1t"/>
                     </constraints>
@@ -46,8 +46,8 @@
                 <constraint firstItem="G27-v1-CCv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="8ju-iB-qlN"/>
                 <constraint firstItem="G27-v1-CCv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E1D-Gr-xwx"/>
                 <constraint firstItem="G27-v1-CCv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OTy-ct-9uE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b9E-0B-Oxp" secondAttribute="trailing" constant="50" id="ROP-sw-K0q"/>
-                <constraint firstItem="b9E-0B-Oxp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="bI8-sb-Y1Z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b9E-0B-Oxp" secondAttribute="trailing" constant="25" id="ROP-sw-K0q"/>
+                <constraint firstItem="b9E-0B-Oxp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="bI8-sb-Y1Z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b9E-0B-Oxp" secondAttribute="bottom" constant="20" id="kaR-jd-GIE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -25,9 +25,9 @@ final class AudioService: NSObject, AudioServiceProtocol {
     
     func setupRecorder(url: URL) {
         let settings: [String : Any] = [
-            AVSampleRateKey: 44100.0,
-            AVFormatIDKey: kAudioFormatAppleLossless,
-            AVEncoderBitRateKey : 320000,
+            AVSampleRateKey: 8000.0,
+            AVFormatIDKey: kAudioFormatULaw,
+            AVEncoderBitRateKey : 64000.0,
             AVNumberOfChannelsKey: 2,
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
         ]

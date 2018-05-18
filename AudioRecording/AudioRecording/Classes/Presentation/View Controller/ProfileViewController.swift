@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var exitButton: UIButton!
     
@@ -50,7 +51,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func exitTapped(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        model.logout()
     }
     
     private func bindEvents() {
@@ -58,8 +59,12 @@ class ProfileViewController: UIViewController {
             switch status {
             case .loading:
                 ModalLoadingIndicator.show()
-            case .rich:
+            case .richBalance:
+                self.moneyLabel.text = "\(Int(self.model.balance))"
                 ModalLoadingIndicator.hide()
+            case .richLogout:
+                ModalLoadingIndicator.hide()
+                self.dismiss(animated: true, completion: nil)
             case .error(let message):
                 self.showError(message)
                 ModalLoadingIndicator.hide()

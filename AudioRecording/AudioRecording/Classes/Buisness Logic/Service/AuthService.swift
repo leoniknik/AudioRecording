@@ -25,4 +25,13 @@ class AuthService: AuthServiceProtocol {
         }
     }
     
+    func logout(completion: LogoutCompletion) {
+        let request = LogoutRequest()
+        requestSender.request(config: request) { (result) in
+            DispatchQueue.main.async {
+                completion?(result)
+            }
+        }
+    }
+    
 }

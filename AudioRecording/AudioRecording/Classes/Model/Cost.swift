@@ -9,7 +9,7 @@
 import Foundation
 
 class Cost: Decodable {
-    var cost: Int
+    var cost: Int = 10
     var errors: [String]
     var result: Bool
 

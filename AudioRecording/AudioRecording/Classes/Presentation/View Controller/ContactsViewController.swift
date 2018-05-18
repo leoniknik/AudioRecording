@@ -109,7 +109,7 @@ final class ContactsViewController: UIViewController {
                 return
             }
             if let flag = self?.model.saveDistribution(title: textField.text ?? ""), flag == true {
-                
+                self?.showMessageScreen()
             } else {
                 self?.showError("Рассылка с таким именем уже существует")
             }

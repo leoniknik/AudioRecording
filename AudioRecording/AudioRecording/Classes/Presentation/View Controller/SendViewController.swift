@@ -17,6 +17,12 @@ class SendViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
     
+    //view for money
+    @IBOutlet weak var moneyView: UIView!
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var bottomMoneyViewConstraint: NSLayoutConstraint!
+    
     var rootAssembly: RootAssembly!
     var model: SendPresentationModel!
     var cellID = "\(NumberCell.self)"
@@ -34,6 +40,7 @@ class SendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +62,7 @@ class SendViewController: UIViewController {
     }
     
     private func setupSendButton() {
-        sendButton.layer.cornerRadius = 12
+        sendButton.layer.cornerRadius = 20
         sendButton.clipsToBounds = true
         sendButton.backgroundColor = .ccGreen
     }
@@ -94,6 +101,43 @@ class SendViewController: UIViewController {
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
     }
     
+    @IBAction func closeMoneyView(_ sender: UIButton) {
+        self.bottomMoneyViewConstraint.constant = -100
+        UIView.animate(withDuration: 0.8) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func showMoneyView() {
+        self.bottomMoneyViewConstraint.constant = 0
+        UIView.animate(withDuration: 0.8) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func bindEvents() {
+        model.changeStateHandler = { [unowned self] status in
+            switch status {
+            case .loading:
+                ModalLoadingIndicator.show()
+            case .rich:
+                if let result = self.model.cost {
+                    self.moneyLabel.text = "\(result.cost)"
+                    self.showMoneyView()
+                }
+                ModalLoadingIndicator.hide()
+            case .error(let message):
+                self.showError(message)
+                ModalLoadingIndicator.hide()
+            }
+        }
+    }
+    
+    @IBAction func send(_ sender: UIButton) {
+        model.send()
+    }
+    
+    
 }
 
 extension SendViewController: UITableViewDelegate {
@@ -117,6 +161,6 @@ extension SendViewController: UITableViewDataSource {
 extension SendViewController: FilesViewControllerDelegate {
     func recordDidSelected(_ record: RecordViewModel) {
         model.message.record = record
-        recordLabel.text = "\(record.recordTitle) - \(record.duration)"
+        recordLabel.text = "\(record.name) - \(record.duration)"
     }
 }

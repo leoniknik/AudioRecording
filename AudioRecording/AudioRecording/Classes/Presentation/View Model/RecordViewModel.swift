@@ -12,6 +12,10 @@ final class RecordViewModel {
     var recordTitle: String
     var duration: String
     
+    var name: String {
+        return recordTitle.fileName()
+    }
+    
     init(recordTitle: String, duration: String) {
         self.recordTitle = recordTitle
         self.duration = duration

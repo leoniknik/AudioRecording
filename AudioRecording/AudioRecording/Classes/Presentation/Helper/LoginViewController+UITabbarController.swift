@@ -26,7 +26,7 @@ extension LoginViewController {
         
         //status screen
         let statusNC = setupDefaultNavController()
-        let statusVC = UIViewController()
+        let statusVC = StatusViewController()
         statusNC.viewControllers.append(statusVC)
         tabBarController.viewControllers?.append(statusNC)
         

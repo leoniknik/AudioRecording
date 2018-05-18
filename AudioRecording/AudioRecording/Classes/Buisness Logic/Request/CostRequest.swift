@@ -10,10 +10,10 @@ import Foundation
 import Alamofire
 
 class CostRequest: RequestConfig<Cost> {
-    init(numbers: [String], duration: Int) {
+    init(numbers: String, duration: Int) {
         let parameters: Parameters = [
-            "Numbers": "[89989898]",
-            "Duration": "88"
+            "Numbers": numbers,
+            "Duration": duration
         ]
         let headers: HTTPHeaders = [
             "Content-Type" : "application/json"

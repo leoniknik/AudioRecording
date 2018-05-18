@@ -34,7 +34,7 @@ final class AudioRecordCell: UITableViewCell {
     }
     
     func configure(viewModel: RecordViewModel) {
-        recordTitle.text = viewModel.recordTitle
+        recordTitle.text = viewModel.name
         recordDuration.text = "\(viewModel.duration)"
     }
     
