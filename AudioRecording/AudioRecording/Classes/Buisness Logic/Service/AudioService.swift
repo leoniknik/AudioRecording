@@ -28,8 +28,10 @@ final class AudioService: NSObject, AudioServiceProtocol {
             AVSampleRateKey: 8000.0,
             AVFormatIDKey: kAudioFormatULaw,
             AVEncoderBitRateKey : 64000.0,
-            AVNumberOfChannelsKey: 2,
-            AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
+            AVEncoderBitDepthHintKey: 8,
+            
         ]
         
         do {
@@ -40,9 +42,9 @@ final class AudioService: NSObject, AudioServiceProtocol {
         }
         
         guard let recorder = recorder else { return }
-        recorder.prepareToRecord()
         recorder.isMeteringEnabled = true
         recorder.delegate = self
+        recorder.prepareToRecord()
         recorder.record()
         
         displayLink = CADisplayLink(target: self, selector: #selector(updateMeters))

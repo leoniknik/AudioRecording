@@ -49,31 +49,33 @@ final class RequestSender: RequestSenderProtocol {
     }
     
     
-    func upload() {
-        guard let filePath = Constants.recordsPath?.appendingPathComponent("Запись 1.wav") else { return }
+    func upload<Model>(config: UploadConfig<Model>, completionHandler: CompletionHandler<Model>) {
+        
+        guard let parameters = config.parameters as? [String: String] else {
+            completionHandler?(Result.error("Не верные параметры"))
+            return
+        }
 
-        let parameters = [
-            "Title": "Запись 0",
-            "Numbers": "[1111]"
-        ]
-        let headers: HTTPHeaders = [
-            "Content-Type" : "multipart/form-data"
-        ]
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             for (key, value) in parameters {
                 if let data = value.data(using: .utf8) {
                     multipartFormData.append(data, withName: key)
                 }
             }
-            multipartFormData.append(filePath, withName: "Content", fileName: "Запись 1.wav", mimeType: "audio/wav")
-        }, to: "http://78.36.152.53/api/Call", method: .post, headers: headers) { (result) in
+            multipartFormData.append(config.file.filePath, withName: config.file.parameterName, fileName: config.file.fileName, mimeType: config.file.mimeType)
+        }, to: config.url, method: config.method, headers: config.headers) { (result) in
             switch result {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
-                    
+                    guard let result = config.parser.parse(response) else {
+                        completionHandler?(Result.error("Ошибка при получении данных"))
+                        return
+                    }
+                    completionHandler?(Result.success(result))
                 }
             case .failure(let encodingError):
-                print(encodingError)
+                debugPrint(encodingError)
+                completionHandler?(Result.error("Нет удалось загрузить файл"))
             }
         }
     }

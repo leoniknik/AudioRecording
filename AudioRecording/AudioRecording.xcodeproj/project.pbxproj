@@ -64,6 +64,10 @@
 		CA871CA2205EFDE1009BDDB0 /* String+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA871CA1205EFDE1009BDDB0 /* String+Time.swift */; };
 		CA876BEA2053F79C003E81DC /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA876BE82053F79C003E81DC /* RecordingViewController.swift */; };
 		CA876BED20540048003E81DC /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA876BEC20540048003E81DC /* Storyboard.storyboard */; };
+		CA988F5920BD3D3E00D5066A /* UploadConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F5820BD3D3E00D5066A /* UploadConfig.swift */; };
+		CA988F5C20BD416300D5066A /* CallUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F5B20BD416300D5066A /* CallUpload.swift */; };
+		CA988F5E20BD421300D5066A /* CallResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F5D20BD421300D5066A /* CallResult.swift */; };
+		CA988F6020BD43E500D5066A /* CallParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F5F20BD43E500D5066A /* CallParser.swift */; };
 		CAA9566620642C45003F4742 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA9566420642C45003F4742 /* LoginViewController.swift */; };
 		CAA9566720642C45003F4742 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA9566520642C45003F4742 /* LoginViewController.xib */; };
 		CAABFA0220947D3900886D90 /* AuthUserParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABFA0120947D3900886D90 /* AuthUserParser.swift */; };
@@ -166,6 +170,10 @@
 		CA871CA1205EFDE1009BDDB0 /* String+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Time.swift"; sourceTree = "<group>"; };
 		CA876BE82053F79C003E81DC /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		CA876BEC20540048003E81DC /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		CA988F5820BD3D3E00D5066A /* UploadConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadConfig.swift; sourceTree = "<group>"; };
+		CA988F5B20BD416300D5066A /* CallUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallUpload.swift; sourceTree = "<group>"; };
+		CA988F5D20BD421300D5066A /* CallResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallResult.swift; sourceTree = "<group>"; };
+		CA988F5F20BD43E500D5066A /* CallParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallParser.swift; sourceTree = "<group>"; };
 		CAA9566420642C45003F4742 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CAA9566520642C45003F4742 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		CAABFA0120947D3900886D90 /* AuthUserParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserParser.swift; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 		CA4652DC206441FC0040DD45 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				CA988F5A20BD414100D5066A /* Upload */,
 				CA4652DD206442950040DD45 /* RequestConfig.swift */,
 				CABB93C5208CC26900D699A9 /* AuthUserRequest.swift */,
 				CA3819CB209705F1000B6921 /* BalanceRequest.swift */,
@@ -271,6 +280,7 @@
 				CA3819CD2097064F000B6921 /* BalanceParser.swift */,
 				CACC434E2097DCE500834AAD /* CostParser.swift */,
 				CA340A0820990BC4004B11E5 /* LogoutParser.swift */,
+				CA988F5F20BD43E500D5066A /* CallParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -326,6 +336,15 @@
 				CA3819C7209703C7000B6921 /* MoneyServiceProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CA988F5A20BD414100D5066A /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				CA988F5820BD3D3E00D5066A /* UploadConfig.swift */,
+				CA988F5B20BD416300D5066A /* CallUpload.swift */,
+			);
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		CABA3F78209E63BE007E49B4 /* StatusCell */ = {
@@ -439,6 +458,7 @@
 				CA3819C92097044C000B6921 /* Balance.swift */,
 				CACC434A2097D89500834AAD /* Cost.swift */,
 				CA340A0420990B2E004B11E5 /* LogoutResult.swift */,
+				CA988F5D20BD421300D5066A /* CallResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -778,6 +798,8 @@
 				CA7DB177208D2B4C000F54A0 /* ContactsViewController.swift in Sources */,
 				CA871C92205E75AA009BDDB0 /* ServiceLayer.swift in Sources */,
 				CA67D73D2095170D00947D30 /* DistributionCell.swift in Sources */,
+				CA988F6020BD43E500D5066A /* CallParser.swift in Sources */,
+				CA988F5E20BD421300D5066A /* CallResult.swift in Sources */,
 				CA7DA41D208DD30300A2222B /* KeyboardViewController.swift in Sources */,
 				CAD718A920534B2F007D5239 /* AudioRecordCell.swift in Sources */,
 				CA871C8E205E728F009BDDB0 /* FilesViewController+BubbleAnimationDelegate.swift in Sources */,
@@ -803,7 +825,9 @@
 				CAABFA08209496CD00886D90 /* SendPresentationModel.swift in Sources */,
 				CA7DB17F208DB4A8000F54A0 /* ContactsPresentationModel.swift in Sources */,
 				CA67D73520950B9300947D30 /* Distribution.swift in Sources */,
+				CA988F5C20BD416300D5066A /* CallUpload.swift in Sources */,
 				CADA9C89205434430031433B /* UIColors.swift in Sources */,
+				CA988F5920BD3D3E00D5066A /* UploadConfig.swift in Sources */,
 				CABB93C0208CC04B00D699A9 /* AuthServiceProtocol.swift in Sources */,
 				CA340A0520990B2E004B11E5 /* LogoutResult.swift in Sources */,
 				CA871CA2205EFDE1009BDDB0 /* String+Time.swift in Sources */,
