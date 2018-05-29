@@ -8,12 +8,29 @@
 
 import Foundation
 
-
-final class SendPresentationModel: PresentationModel {
+final class SendPresentationModel {
+    
+    enum SendState {
+        case loading
+        case richCost
+        case richCall
+        case error(message: String)
+    }
+    
+    typealias ChangeStateHandler = (SendState) -> Void
+    var changeStateHandler: ChangeStateHandler?
+    
+    var state: SendState = .richCost {
+        didSet {
+            changeStateHandler?(state)
+        }
+    }
     
     let moneyService = ServiceLayer.shared.moneyService
+    let messageService = ServiceLayer.shared.messageService
     
     var message: MessageViewModel
+    //TODO ViewModel
     var cost: Cost?
     
     init(message: MessageViewModel) {
@@ -25,18 +42,15 @@ final class SendPresentationModel: PresentationModel {
     }
     
     func getCost() {
+        guard let _ = message.record?.duration else { return }
         state = .loading
         //TODO
-        guard let duration = message.record?.duration else {
-            state = .error(message: "Аудиозапись не выбрана")
-            return
-        }
         moneyService.getCost(numbers: numbers, duration: 5) { [weak self] (data) in
             guard let `self` = self else { return }
             switch data {
             case .success(let result):
                 self.cost = result
-                self.state = .rich
+                self.state = .richCost
             case .error(let description):
                 self.state = .error(message: description)
             }
@@ -44,6 +58,10 @@ final class SendPresentationModel: PresentationModel {
     }
     
     func send() {
+        guard let _ = message.record else {
+            state = .error(message: "Аудиозапись не выбрана")
+            return
+        }
         state = .loading
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
@@ -60,7 +78,8 @@ final class SendPresentationModel: PresentationModel {
         
         dispatchGroup.enter()
         var cost = Cost(cost: 0, errors: [], result: false)
-        moneyService.getCost(numbers: numbers, duration: 5) { (data) in
+        //TODO исправить duration
+        moneyService.getCost(numbers: numbers, duration: 4) { (data) in
             switch data {
             case .success(let result):
                 cost = result
@@ -80,7 +99,21 @@ final class SendPresentationModel: PresentationModel {
     }
     
     private func sendCall() {
-        self.state = .rich
+        guard let record = message.record else { return }
+        guard let filePath = Constants.recordsPath?.appendingPathComponent(record.name) else { return }
+        let numbersAsString = NumberFormatter.filterNumbers(numbers: numbers)
+        state = .loading
+        
+        messageService.call(filePath: filePath, filename: record.recordTitle, title: record.name, numbers: numbersAsString) { [weak self] (data) in
+            guard let `self` = self else { return }
+            switch data {
+            case .success(let result):
+                print(result)
+                self.state = .richCall
+            case .error(let description):
+                self.state = .error(message: description)
+            }
+        }
     }
     
 }

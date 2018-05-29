@@ -68,6 +68,9 @@
 		CA988F5C20BD416300D5066A /* CallUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F5B20BD416300D5066A /* CallUpload.swift */; };
 		CA988F5E20BD421300D5066A /* CallResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F5D20BD421300D5066A /* CallResult.swift */; };
 		CA988F6020BD43E500D5066A /* CallParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F5F20BD43E500D5066A /* CallParser.swift */; };
+		CA988F6220BD54A100D5066A /* MessageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F6120BD54A100D5066A /* MessageServiceProtocol.swift */; };
+		CA988F6420BD5CE100D5066A /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F6320BD5CE100D5066A /* MessageService.swift */; };
+		CA988F6620BD5D7400D5066A /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA988F6520BD5D7400D5066A /* NumberFormatter.swift */; };
 		CAA9566620642C45003F4742 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA9566420642C45003F4742 /* LoginViewController.swift */; };
 		CAA9566720642C45003F4742 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA9566520642C45003F4742 /* LoginViewController.xib */; };
 		CAABFA0220947D3900886D90 /* AuthUserParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABFA0120947D3900886D90 /* AuthUserParser.swift */; };
@@ -174,6 +177,9 @@
 		CA988F5B20BD416300D5066A /* CallUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallUpload.swift; sourceTree = "<group>"; };
 		CA988F5D20BD421300D5066A /* CallResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallResult.swift; sourceTree = "<group>"; };
 		CA988F5F20BD43E500D5066A /* CallParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallParser.swift; sourceTree = "<group>"; };
+		CA988F6120BD54A100D5066A /* MessageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageServiceProtocol.swift; sourceTree = "<group>"; };
+		CA988F6320BD5CE100D5066A /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		CA988F6520BD5D7400D5066A /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		CAA9566420642C45003F4742 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CAA9566520642C45003F4742 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		CAABFA0120947D3900886D90 /* AuthUserParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserParser.swift; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 				CABB93C3208CC18700D699A9 /* AuthService.swift */,
 				CA7DB188208DC572000F54A0 /* ContactsService.swift */,
 				CA3819C520970358000B6921 /* MoneyService.swift */,
+				CA988F6320BD5CE100D5066A /* MessageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -334,6 +341,7 @@
 				CABB93BF208CC04B00D699A9 /* AuthServiceProtocol.swift */,
 				CA7DB186208DC551000F54A0 /* ContactsServiceProtocol.swift */,
 				CA3819C7209703C7000B6921 /* MoneyServiceProtocol.swift */,
+				CA988F6120BD54A100D5066A /* MessageServiceProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -469,6 +477,7 @@
 				CAD7189A20530AAE007D5239 /* RootAssembly.swift */,
 				CAD7189F20530BEC007D5239 /* PresentationModel.swift */,
 				CA67D73F2095C00700947D30 /* Constants.swift */,
+				CA988F6520BD5D7400D5066A /* NumberFormatter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -821,10 +830,12 @@
 				CA871CA0205E96FF009BDDB0 /* WaveView.swift in Sources */,
 				CA4652DE206442950040DD45 /* RequestConfig.swift in Sources */,
 				CA7DB16A208CF2F4000F54A0 /* RMDistribution.swift in Sources */,
+				CA988F6620BD5D7400D5066A /* NumberFormatter.swift in Sources */,
 				CA7DB189208DC572000F54A0 /* ContactsService.swift in Sources */,
 				CAABFA08209496CD00886D90 /* SendPresentationModel.swift in Sources */,
 				CA7DB17F208DB4A8000F54A0 /* ContactsPresentationModel.swift in Sources */,
 				CA67D73520950B9300947D30 /* Distribution.swift in Sources */,
+				CA988F6420BD5CE100D5066A /* MessageService.swift in Sources */,
 				CA988F5C20BD416300D5066A /* CallUpload.swift in Sources */,
 				CADA9C89205434430031433B /* UIColors.swift in Sources */,
 				CA988F5920BD3D3E00D5066A /* UploadConfig.swift in Sources */,
@@ -851,6 +862,7 @@
 				CA4652D6206433F80040DD45 /* LoginPresentationModel.swift in Sources */,
 				CA4652D42064336B0040DD45 /* LoginAssembly.swift in Sources */,
 				CA3819CE2097064F000B6921 /* BalanceParser.swift in Sources */,
+				CA988F6220BD54A100D5066A /* MessageServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

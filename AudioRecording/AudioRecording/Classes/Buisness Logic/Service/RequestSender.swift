@@ -62,11 +62,16 @@ final class RequestSender: RequestSenderProtocol {
                     multipartFormData.append(data, withName: key)
                 }
             }
-            multipartFormData.append(config.file.filePath, withName: config.file.parameterName, fileName: config.file.fileName, mimeType: config.file.mimeType)
+            guard let path = Constants.recordsPath?.appendingPathComponent("Запись 0.wav") else { return }
+//            multipartFormData.append(config.file.filePath, withName: config.file.parameterName, fileName: config.file.fileName, mimeType: config.file.mimeType)
+            multipartFormData.append(path, withName: "Content", fileName: "Запись 0.wav", mimeType: "audio/wav")
         }, to: config.url, method: config.method, headers: config.headers) { (result) in
             switch result {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
+                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                        print("Data: \(utf8Text)")
+                    }
                     guard let result = config.parser.parse(response) else {
                         completionHandler?(Result.error("Ошибка при получении данных"))
                         return

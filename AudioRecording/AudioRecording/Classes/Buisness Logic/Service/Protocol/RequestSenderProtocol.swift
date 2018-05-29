@@ -13,4 +13,5 @@ protocol RequestSenderProtocol: class {
     typealias CompletionHandler<Model> = ((Result<Model>) -> Void)?
     
     func request<Model>(config: RequestConfig<Model>, completionHandler: CompletionHandler<Model>)
+    func upload<Model>(config: UploadConfig<Model>, completionHandler: CompletionHandler<Model>)
 }

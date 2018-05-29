@@ -120,12 +120,15 @@ class SendViewController: UIViewController {
             switch status {
             case .loading:
                 ModalLoadingIndicator.show()
-            case .rich:
+            case .richCost:
                 if let result = self.model.cost {
                     self.moneyLabel.text = "\(result.cost)"
                     self.showMoneyView()
                 }
                 ModalLoadingIndicator.hide()
+            case .richCall:
+                ModalLoadingIndicator.hide()
+                self.showAlert()
             case .error(let message):
                 self.showError(message)
                 ModalLoadingIndicator.hide()
@@ -137,6 +140,14 @@ class SendViewController: UIViewController {
         model.send()
     }
     
+    func showAlert() {
+        let alert = UIAlertController(title: "Рассылка", message: "Файл отправлен", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
 }
 

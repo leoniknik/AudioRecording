@@ -15,6 +15,7 @@ final class ServiceLayer {
     let requestService: RequestSenderProtocol
     let authService: AuthServiceProtocol
     let moneyService: MoneyServiceProtocol
+    let messageService: MessageServiceProtocol
     
     let audioService: AudioServiceProtocol
     let fileService: FileServiceProtocol
@@ -25,6 +26,7 @@ final class ServiceLayer {
         
         authService = AuthService(requestSender: requestService)
         moneyService = MoneyService(requestSender: requestService)
+        messageService = MessageService(requestSender: requestService)
         
         audioService = AudioService()
         fileService = FileService()

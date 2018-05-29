@@ -10,12 +10,12 @@ import Foundation
 import Alamofire
 
 class CallUpload: UploadConfig<CallResult> {
-    init(title: String, numbers: String, duration: Int, file: FileUpload) {
-        
+    init(title: String, numbers: String, filePath: URL, filename: String) {
+        let file = FileUpload(filePath: filePath, fileName: filename, parameterName: "Content", mimeType: "audio/wav")
         let parameters: Parameters = [
-            "Title": title,
-            "Numbers": numbers,
-            "Duration": duration
+//            "Title": title,
+            "Title": "Запись",
+            "Numbers": "[3333]"
         ]
         let headers: HTTPHeaders = [
             "Content-Type" : "multipart/form-data"
